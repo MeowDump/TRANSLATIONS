@@ -71,20 +71,20 @@
       };
     // HERE
     // Paste it above me and DO NOT DELETE THIS COMMENT
-    } else if (LANG === '$$') {
+    } else if (LANG === 'zh_CN') {
       FRAG = {
-        "Analyzing user apps... (": "#…(",
-        "Checking risky apps... (": "#…(",
-        " installed packages, ": " #, ",
-        "Found ": "# ",
-        " user apps": " #",
-        "Active: ": " #: ",
-        "Loaded: ": " #: ",
-        "Mapped ": "# ",
-        "Activating ": "# ",
-        "Applying ": "# ",
-        " profile...": " #…",
-        " profile activated": " #",
+        "Analyzing user apps... (": "正在分析用户应用... (",
+        "Checking risky apps... (": "正在检查风险应用... (",
+        " installed packages, ": " 个已安装包， ",
+        "Found ": "找到  ",
+        " user apps": " 个用户应用",
+        "Active: ": " 已激活：",
+        "Loaded: ": " 已加载：",
+        "Mapped ": "已映射 ",
+        "Activating ": "正在激活",
+        "Applying ": "正在应用",
+        " profile...": "配置文件...",
+        " profile activated": " 配置文件已激活",
         "...": "…"
       };
     }
