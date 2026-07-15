@@ -35,43 +35,8 @@
       "...": "..."
     };
 
-
     // Language-specific fragment overrides
-    if (LANG === 'hi') {
-      FRAG = {
-        "Analyzing user apps... (": "Apps scan kr rhi hu... (",
-        "Checking risky apps... (": "Faltu apps check kr rhi hu... (",
-        " installed packages, ": " Installed apps ",
-        "Found ": "Mil gaya ",
-        " user apps": " tere apps",
-        "Active: ": "Chal rha h ",
-        "Loaded: ": "Load ho gya ",
-        "Mapped ": "Ho gya ",
-        "Activating ": "Chalu kr rhi hu ",
-        "Applying ": "Set kr rhi hu ",
-        " profile...": " profile...",
-        " profile activated": " profile set ho gyi",
-        "...": "..."
-      };
-    } else if (LANG === 'placeholder') {
-      FRAG = {
-        "Analyzing user apps... (": "placeholder... (",
-        "Checking risky apps... (": "placeholder... (",
-        " installed packages, ": " placeholder, ",
-        "Found ": "placeholder ",
-        " user apps": " placeholder",
-        "Active: ": "placeholder: ",
-        "Loaded: ": "placeholder: ",
-        "Mapped ": "placeholder ",
-        "Activating ": "placeholder ",
-        "Applying ": "placeholder ",
-        " profile...": " placeholder...",
-        " profile activated": " placeholder",
-        "...": "..."
-      };
-    // HERE
-    // Paste it above me and DO NOT DELETE THIS COMMENT
-    } else if (LANG === 'zh_CN') {
+    if (LANG === 'zh_CN') {
       FRAG = {
         "Analyzing user apps... (": "正在分析用户应用... (",
         "Checking risky apps... (": "正在检查风险应用... (",
@@ -85,6 +50,38 @@
         "Applying ": "正在应用",
         " profile...": "配置文件...",
         " profile activated": " 配置文件已激活",
+        "...": "…"
+      };
+    } else if (LANG === 'hi') {
+      FRAG = {
+        "Analyzing user apps... (": "Rukja ... (",
+        "Checking risky apps... (": "Checking... (",
+        " installed packages, ": " Tumhare Apps, ",
+        "Found ": "Mil gya ",
+        " user apps": " Tere installed Apps",
+        "Active: ": "Current: ",
+        "Loaded: ": "Ho gya: ",
+        "Mapped ": "Theek hai ",
+        "Activating ": "Krti hoon ",
+        "Applying ": "Ho rha h ",
+        " profile...": " profile...",
+        " profile activated": " profile active ho gya h",
+        "...": "..."
+      };
+    } else if (LANG === 'ar') {
+      FRAG = {
+        "Analyzing user apps... (": "###…(",
+        "Checking risky apps... (": "###…(",
+        " installed packages, ": " ###, ",
+        "Found ": "### ",
+        " user apps": " ###",
+        "Active: ": " ###: ",
+        "Loaded: ": " ###: ",
+        "Mapped ": "### ",
+        "Activating ": "### ",
+        "Applying ": "### ",
+        " profile...": " ###…",
+        " profile activated": " ###",
         "...": "…"
       };
     }
@@ -110,16 +107,18 @@
     function translateTextNode(node){
       var v = node.nodeValue;
       if (!v) return;
+      if (node.__ibTranslated) return;
       var k = v.trim();
       if (!k) return;
       if (_D[k] != null) {
         node.nodeValue = _D[k];
+        node.__ibTranslated = true;
         return;
       }
-      // Fallback: try with normalized quotes
       var kNorm = normalizeQuotes(k);
       if (_D[kNorm] != null) {
         node.nodeValue = _D[kNorm];
+        node.__ibTranslated = true;
       }
     }
 
@@ -172,7 +171,10 @@
       var obs = new MutationObserver(function(ms){
         for (var i = 0; i < ms.length; i++){
           var m = ms[i];
-          if (m.type === "characterData"){ translateTextNode(m.target); continue; }
+          if (m.type === "characterData"){ 
+            if (!m.target.__ibTranslated) translateTextNode(m.target);
+            continue; 
+          }
           var added = m.addedNodes;
           for (var j = 0; j < added.length; j++){
             var n = added[j];
