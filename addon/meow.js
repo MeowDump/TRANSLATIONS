@@ -84,6 +84,22 @@
         " profile activated": " ###",
         "...": "…"
       };
+    } else if (LANG === 'es') {
+      FRAG = {
+        "Analyzing user apps... (": "Analizando las apps del usuario…(",
+        "Checking risky apps... (": "Comprobando apps en riesgo…(",
+        " installed packages, ": " Paquetes Instalados, ",
+        "Found ": "Encontrado ",
+        " user apps": " apps del usuario",
+        "Active: ": " Activo: ",
+        "Loaded: ": " Cargado: ",
+        "Mapped ": "Asignado ",
+        "Activating ": "Activando ",
+        "Applying ": "Aplicando ",
+        " profile...": " perfil…",
+        " profile activated": " perfil activado",
+        "...": "…"
+      };
     }
 
     function tr(s){
