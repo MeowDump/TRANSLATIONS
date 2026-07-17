@@ -70,8 +70,8 @@
       };
     } else if (LANG === 'es') {
       FRAG = {
-        "Analyzing user apps... (": "Analizando las apps del usuario…(",
-        "Checking risky apps... (": "Comprobando apps en riesgo…(",
+        "Analyzing user apps... (": "Analizando las apps del usuario...(",
+        "Checking risky apps... (": "Comprobando apps en riesgo...(",
         " installed packages, ": " Paquetes Instalados, ",
         "Found ": "Encontrado ",
         " user apps": " apps del usuario",
@@ -83,6 +83,7 @@
         " profile...": " perfil…",
         " profile activated": " perfil activado",
         "...": "…"
+        };
     } else if (LANG === 'ar') {
       FRAG = {
         "Analyzing user apps... (": "###…(",
