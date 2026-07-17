@@ -83,7 +83,7 @@
         " profile...": " perfil…",
         " profile activated": " perfil activado",
         "...": "…"
-        };
+      };
     } else if (LANG === 'ar') {
       FRAG = {
         "Analyzing user apps... (": "###…(",
