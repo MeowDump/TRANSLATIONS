@@ -10,7 +10,7 @@ window.i18nDict.es = {
   "Profile:": "Perfil",
   "Props:": "Props",
   "SELinux:": "SELinux",
-  "Config:": "Configuracion",
+  "Config:": "Config",
   "Expiry:": "Expira",
   "Patch:": "Parche",
   "Target:": "Objetivo",
