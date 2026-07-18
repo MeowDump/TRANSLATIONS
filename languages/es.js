@@ -664,7 +664,7 @@ window.i18nDict.es = {
   "Fingerprint not working": "La huella digital no funciona",
   "Open WebUI, Go to MODULE SETTING, and enable KILL SWITCH toggle & reboot your device": "Abre la WebUI, ve a Ajustes de Modulo, activa el interruptor KILL SWITCH y reinicia tu dispositivo",
   "Magisk Tips?": "¿Consejos para Magisk?",
-  "If you're using magisk, make sure to disable magisk's built-in Zygisk & add your banking apps into denylist. GMS & Play Services process will be added automatically via Integrity Box. Also hide your magisk app by changing it's name from magisk settings..": "Si estás usando Magisk, asegúrate de desactivar el Zygisk integrado de Magisk y añadir tus aplicaciones bancarias a la denylist (lista de denegación). Los procesos de GMS y Play Services se añadirán automáticamente a través de Integrity Box. También oculta tu aplicación Magisk cambiando su nombre desde los ajustes de Magisk.."
+  "If you're using magisk, make sure to disable magisk's built-in Zygisk & add your banking apps into denylist. GMS & Play Services process will be added automatically via Integrity Box. Also hide your magisk app by changing it's name from magisk settings..": "Si estás usando Magisk, asegúrate de desactivar el Zygisk integrado de Magisk y añadir tus aplicaciones bancarias a la denylist (lista de denegación). Los procesos de GMS y Play Services se añadirán automáticamente a través de Integrity Box. También oculta tu aplicación Magisk cambiando su nombre desde los ajustes de Magisk..",
 
   /* Integrity Questions */
   "Why is Strong Play Integrity failing?": "¿Por qué falla Strong Play Integrity?",
@@ -718,7 +718,7 @@ window.i18nDict.es = {
   "However, root-hiding + spoofing is a game of cat–mouse and may not work universally.": "Sin embargo, ocultar root y suplantar es un juego del gato y el ratón, y podría no funcionar universalmente.",
   "Why do banking or wallet apps still detect root even though Play Integrity says 'pass'?": "¿Por qué las aplicaciones bancarias o billeteras siguen detectando root aunque Play Integrity diga 'pass' (aprobado)?",
   "Because Play Integrity is only one part of detection.": "Porque Play Integrity es solo una parte de la detección.",
-  "Many apps also perform root/environment detection at runtime. If root-hiding is incomplete or other modules leave traces (e.g. custom recovery folder, SELinux flags, debug props), apps may still detect tampering.": "Muchas aplicaciones también realizan una detección de root/entorno en tiempo de ejecución (runtime). Si el ocultamiento de root es incompleto o si otros módulos dejan rastros (ej. carpeta de custom recovery, flags de SELinux, propiedades de depuración), las aplicaciones aún pueden detectar la manipulación."
+  "Many apps also perform root/environment detection at runtime. If root-hiding is incomplete or other modules leave traces (e.g. custom recovery folder, SELinux flags, debug props), apps may still detect tampering.": "Muchas aplicaciones también realizan una detección de root/entorno en tiempo de ejecución (runtime). Si el ocultamiento de root es incompleto o si otros módulos dejan rastros (ej. carpeta de custom recovery, flags de SELinux, propiedades de depuración), las aplicaciones aún pueden detectar la manipulación.",
 
   /* Curiosity Questions */
   "After an Android update or ROM update, I have to reapply spoofing, why?": "Después de una actualización de Android o de la ROM, tengo que volver a aplicar la suplantación, ¿por qué?",
