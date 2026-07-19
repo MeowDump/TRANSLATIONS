@@ -1,41 +1,41 @@
 [
-  {
-    "name": "Mona",
-    "role": "Creator",
-    "link": "t.me/TempMeow",
-    "avatar": "https://avatars.githubusercontent.com/u/121730102?v=4"
-  },
-  {
-    "name": "osm0sis",
-    "role": "PIF base",
-    "link": "https://github.com/osm0sis",
-    "avatar": "https://avatars.githubusercontent.com/u/2858716?v=4"
-  },
-  {
-    "name": "Enginex0",
-    "role": "resetprop-rs binaries",
-    "link": "https://github.com/Enginex0",
-    "avatar": "https://avatars.githubusercontent.com/u/176248111?v=4"
-  },
-  {
-    "name": "Tehreem",
-    "role": "Translator",
-    "languages": ["en","hi"],
-    "link": "",
-    "avatar": "https://i.etsystatic.com/31548528/r/il/ffde13/5804742914/il_850x675.5804742914_ap2d.jpg"
-  },
-  {
-    "name": "likayo",
-    "role": "Translator",
-    "languages": ["zh-CN"],
-    "link": "https://github.com/LQ2002",
-    "avatar": "https://github.com/LQ2002.png"
-  },
-  {
-    "name": "",
-    "role": "Translator",
-    "languages": [""],
-    "link": "",
-    "avatar": ""
-  }
+{
+"name": "Mona",
+"role": "Creator",
+"link": "t.me/TempMeow",
+"avatar": "https://avatars.githubusercontent.com/u/121730102?v=4"
+},
+{
+"name": "osm0sis",
+"role": "PIF base",
+"link": "https://github.com/osm0sis",
+"avatar": "https://avatars.githubusercontent.com/u/2858716?v=4"
+},
+{
+"name": "Enginex0",
+"role": "resetprop-rs binaries",
+"link": "https://github.com/Enginex0",
+"avatar": "https://avatars.githubusercontent.com/u/176248111?v=4"
+},
+{
+"name": "Tehreem",
+"role": "Translator",
+"languages": ["en","hi"],
+"link": "",
+"avatar": "https://i.etsystatic.com/31548528/r/il/ffde13/5804742914/il_850x675.5804742914_ap2d.jpg"
+},
+{
+"name": "likayo",
+"role": "Translator",
+"languages": ["zh-CN"],
+"link": "https://github.com/LQ2002",
+"avatar": "https://github.com/LQ2002.png"
+},
+{
+"name": "عباس حازم",
+"role": "Translator",
+"languages": ["ar"],
+"link": "https://github.com/i3BSKA",
+"avatar": "https://github.com/i3BSKA.png"
+}
 ]
