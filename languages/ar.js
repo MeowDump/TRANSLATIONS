@@ -1,18 +1,17 @@
 window.i18nDict = window.i18nDict || {};
-window.i18nDict.$$ = {
-/* Main Page */
-• "Hated By Many, Defeated By None": "اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ
-",
-"Integrity Hub": "إصلاح النزاهة",
-"Spoofing Hub": "التزييف",
-"Meow Hub": "مركز ",
-"Community & Support": "Meow مركز",
-"Integrity:": "النزاهة",
-"Profile:": "الوضع",
-"Props:": "التكوين",
-"SELinux:": "SELinuxحالة",
-"Config:": "مزيف الى",
-"Expiry:": "الأنتهاء",
+window.i18nDict.ar = {
+  /* Main Page */
+  "Hated By Many, Defeated By None": "الهم صلي وسلم وبارك على نبينا محمد",
+  "Integrity Hub": "مركز النزاهة",
+  "Spoofing Hub": "مركز التزييف",
+  "Meow Hub": "مركز Meow",
+  "Community & Support": "الدعم والمجتمع",
+  "Integrity:": "النزاهة：",
+  "Profile:": "الملف الشخصي：",
+  "Props:": "التكوينات：",
+  "SELinux:": "حالة SELinux：",
+  "Config:": "الاعدادات：",
+  "Expiry:": "تاريخ الانتهاء：",
 "Patch:": "تاريخ التصحيح",
 "Target:": "عدد التطبيقات",
 "Manage Targets": "أدارة التطبيقات",
@@ -52,7 +51,7 @@ window.i18nDict.$$ = {
 "Enforcing": "مفروض",
 "Permissive": "متساهل",
 
-/* Assistant */
+  /* Assistant */
 "IntegrityBox Assistant": "مساعد الوحدة",
 "Select a question or ask manually below": "أختيار سؤال او حدد تحت يدويا ",
 "Minimize FAQ": "تصغير الاسئلة",
@@ -69,17 +68,16 @@ window.i18nDict.$$ = {
 "Misc": "أخرى",
 "Typing...": "يكتب",
 
-/* BootHash */
+  /* BootHash */
 "Verified Boot Hash": "Boot Hash موثوق",
-"Paste your boot hash to verify or fix it": "ألصق هنا الBoot Hash الخاص بك
-",
+"Paste your boot hash to verify or fix it": "ألصق هنا الBoot Hash الخاص بك",
 "Paste boot hash here...": "لصق هنا",
 "Verify": "تأكيد",
 "Result will appear here": "النتيجة ستظهر هنا",
 "Boot hash applied successfully": "تم التطبيق بنجاح",
 "Invalid hash format": "الكود خطأ",
 
-/* Control / Toolkit */
+  /* Control / Toolkit */
 "IntegrityBox Toolkit": "أدوات الوحدة",
 "For Advanced users, Not for noobs & newbies": "للمستخدمين المتقدمين وليس للمبتدئين",
 "Update Channel": "القناة",
@@ -118,7 +116,7 @@ window.i18nDict.$$ = {
 "Switched to Beta channel": "التغيير الى التجريبي",
 "Switched to Stable channel": "التغيير الى المستقر",
 
-/* Flags / Control Centre */
+  /* Flags / Control Centre */
 "Control Centre": "مركز التحكم",
 "Module Configuration": "تكوينات الوحدة",
 "Kill Switch": "مفتاح التوقف",
@@ -135,7 +133,7 @@ window.i18nDict.$$ = {
 "Run Action": "أجراء",
 "Restart Service": "أعادة تشغيل الخدمات",
 
-/* HideMyFiles */
+  /* HideMyFiles */
 "Hide My Files": "أخفاء ملفاتي",
 "Conceal suspicious paths": "أخفاء المسارات المشبوهة",
 "Hide Paths": "أخفاء المسار",
@@ -145,7 +143,7 @@ window.i18nDict.$$ = {
 "Visible": "مرئي",
 "Apply": "حفظ",
 
-/* KeyboxLoader */
+  /* KeyboxLoader */
 "Keybox Loader": "تحميل المفتاح",
 "Import and manage keyboxes": "أضافة وتعديل المفاتيح",
 "Use AOSP Keybox": "اضافة مفتاح ثاني", // this is SECONDARY, not AOSP, I'll edit the file later but you've to write secondary instead of AOSP
@@ -156,7 +154,7 @@ window.i18nDict.$$ = {
 "Expired": "منتهي",
 "Refresh Status": "حالة أعادة التحديث",
 
-/* PlayIntegrityBox */
+  /* PlayIntegrityBox */
 "PlayIntegrityFork Controls": "التحكم بوحدة اصلاح النزاهة",
 "PIF Configuration": "اعدادات اصلاح النزاهة",
 "Spoof Build": "تزييف البناء",
@@ -167,16 +165,16 @@ window.i18nDict.$$ = {
 "Reset to Default": "اعادة الضبط الى الافتراضي",
 "Zygiskless mode has been enabled": "تم تفعيل zygisk وضع بدون ",
 
-/* Profile */
+  /* Profile */
 "IntegrityBox Profile": "حالة الوحدة",
 "Select your device profile": "حدد حالة جهازك",
 "Maximum compatibility mode": "وضع التوافق الاقصى",
 "Standard compatibility": "التوافق القياسي",
 "Advanced spoofing": "تزييف متقدم",
 "Google Tensor devices": "  tensor بمعالج google أجهزة",
-"Apply Profile": "تطبيق ",
+"Apply Profile": "التطبيق الملف الشخصي",
 
-/* PropSpoofer */
+  /* PropSpoofer */
 "Prop Spoofer": "مزيف الخصائص",
 "System property spoofing": "تزييف خصائص النظام",
 "Add Property": "أضافة خاصية",
@@ -186,7 +184,7 @@ window.i18nDict.$$ = {
 "Apply Props": "حفظ التكوين",
 "Reset All": "أعادة ضبط الكل",
 
-/* RepairMode */
+  /* RepairMode */
 "Fix common issues": "حل المشاكل الشائعة",
 "PICS": "PICS",
 "Power Integrity Check System": "نظام فحص السلامة",
@@ -197,7 +195,7 @@ window.i18nDict.$$ = {
 "Executing...": "تنفيذ",
 "Complete": "مكتمل",
 
-/* Report */
+  /* Report */
 "Help Menu": "قائمة المساعدة",
 "Report issues or get help": "إبلاغ عن مشكلة او الحصول على مساعدة",
 "Report a Bug": "إبلاغ عن خطأ",
@@ -209,7 +207,7 @@ window.i18nDict.$$ = {
 "Share logs for debugging": "مشاركة السجلات لتصحيح الاخطاء",
 "Get direct support": "الحصول على دعم مباشر",
 
-/* Spoofing */
+  /* Spoofing */
 "GMS Spoofing Manager": "google أدارة تزييف خدمات",
 "Manage Google Mobile Services spoofing": "أدارة  للهاتف google تزييف خدمات ",
 "Enable Spoofing": "تفعيل التزييف",
@@ -220,15 +218,15 @@ window.i18nDict.$$ = {
 "Active": "نشط",
 "Inactive": "غير نشط",
 
-/* Support */
-"Support": "دعم",
+  /* Support */
+ "Support": "دعم",
 "Support the development": "دعم المطور",
 "Donate": "تبرع",
 "GitHub": "GitHub موقع",
 "Telegram": "تليغرام",
 "Thank you for your support!": "شكرا لك على الدعم",
 
-/* TEEsimulator */
+  /* TEEsimulator */
 "Keybox Selector": "اختيار المفتاح",
 "Select keybox for each app": "أختيار مفتاح لكل تطبيق على حدة",
 "Search apps...": "بحث عن تطبيق",
@@ -238,7 +236,7 @@ window.i18nDict.$$ = {
 "Save Selection": "حفظ الاختيارات",
 "Load More": "تحميل المزيد",
 
-/* TrickyStore */
+  /* TrickyStore */
 "Target Box": "التطبيقات المستهدفة",
 "Manage Tricky Store targets": "أدارة التطبيقات المستهدفة",
 "Blacklist Mode": "وضع القائمة السوداء",
@@ -248,7 +246,7 @@ window.i18nDict.$$ = {
 "Save Targets": "حفظ",
 "Refresh List": "أعادة تحميل القائمة",
 
-/* Common */
+  /* Common */
 "Save": "حفظ",
 "Cancel": "الغاء",
 "Confirm": "تأكيد",
@@ -264,7 +262,7 @@ window.i18nDict.$$ = {
 "Enabled": "تفعيل",
 "Disabled": "تعطيل",
 
-/* Toast messages */
+  /* Toast messages */
 "DroidGuard has been restarted": "تم اعادة تشغيل DroidGuard",
 "Blacklist Unnecessary Apps": "قائمة السوداء للتطبيقات الغير مهمة",
 "Switched to Blacklist Mode": "التغيير الى وضع القائمة السوداء",
@@ -303,7 +301,7 @@ window.i18nDict.$$ = {
 "Paste your boot hash buddy": " الخاص بك Boot Hash الصق ",
 "Boot hash operation complete": "اكتملت العملية",
 
-/* Profile page */
+  /* Profile page */
 "Play Integrity Profile": "ملف النزاهة ",
 "Applying Profile...": "تأكيد الحالة",
 "Notes": "مذكرات",
@@ -319,10 +317,8 @@ window.i18nDict.$$ = {
 "About": "معلومات",
 "Profiles": "ملفات التعريف",
 "Actions": "الأجرائات",
-" - Build, device, fingerprint, and system properties will be spoofed to match a certified device profile recognized by the Play Store. Google services will interpret the device as a Google Pixel device.": "سيتم تزييف خصائص الإصدار والجهاز وبصمة الإصبع والنظام لتتوافق مع ملف تعريف جهاز معتمد معترف به من قِبل متجر Play. ستفسر خدمات Google الجهاز على أنه جهاز Google Pixel
-",
-" - This only spoofs your device fingerprint for the Play Store. Helpful if your device fingerprint got banned by google or broken/completely rekt due to your custom ROM maintainer's skill issue. Your device will be recognized as a certified Google Pixel device.": "هذا يُزيّف بصمة جهازك فقط لمتجر Play. مفيد إذا تم حظر بصمة جهازك من قِبل جوجل أو تعطلت/تلفّت تمامًا بسبب مشكلة في مهارة مُطوّر نظام التشغيل المُخصّص. سيتم التعرّف على جهازك كجهاز جوجل بكسل مُعتمد.
-",
+" - Build, device, fingerprint, and system properties will be spoofed to match a certified device profile recognized by the Play Store. Google services will interpret the device as a Google Pixel device.": "سيتم تزييف خصائص الإصدار والجهاز وبصمة الإصبع والنظام لتتوافق مع ملف تعريف جهاز معتمد معترف به من قِبل متجر Play. ستفسر خدمات Google الجهاز على أنه جهاز Google Pixel",
+" - This only spoofs your device fingerprint for the Play Store. Helpful if your device fingerprint got banned by google or broken/completely rekt due to your custom ROM maintainer's skill issue. Your device will be recognized as a certified Google Pixel device.": "هذا يُزيّف بصمة جهازك فقط لمتجر Play. مفيد إذا تم حظر بصمة جهازك من قِبل جوجل أو تعطلت/تلفّت تمامًا بسبب مشكلة في مهارة مُطوّر نظام التشغيل المُخصّص. سيتم التعرّف على جهازك كجهاز جوجل بكسل مُعتمد.",
 " - Best suited for Android 12 and below. Works fine as long as your current device fingerprint hasn't been blacklisted or rekt by your custom ROM maintainer.": "الأنسب لأصدارات اندرويد 12 فما تحت اذا كانت بصمة الجهاز غير محظورة",
 " - Experimental feature (luck based). You can try this is nothing works for you": "ميزة تجريبية تعتمد على حضك يمكنك تجربتها اذا لم تعمل الخيارات الاخرى",
 " - Clears Play Store & Google Play Services data to fix device certification issues. Just make sure you're passing DEVICE or STRONG integrity": " والخدمات لحل مشكلة الجهاز غير معتمد لكن تأكد من تخطيك النزاهةplay حذف بيانات متجر ",
@@ -334,7 +330,7 @@ window.i18nDict.$$ = {
 "Command failed": "فشل الأمر",
 "Opening APK Mirror...": "يتم فتح موقع APK Mirror",
 
-/* Disable spoofing */
+  /* Disable spoofing */
 "Reboot": "أعادة تشغيل",
 "Reboot Device?": "أعادة تشغيل الجهاز ؟",
 "Reboot required for changes": "أعادة التشغيل مطلوبة لحفظ التغييرات",
@@ -364,7 +360,7 @@ window.i18nDict.$$ = {
 "Reboot command failed": "فشل أمر أعادة التشغيل",
 "Conflict with selected option": "يتعارض مع خيار محدد",
 
-/* Hide My Files */
+  /* Hide My Files */
 "Hide Suspicious Files": "أخفاء الملفات المشبوهة",
 "Enter custom path to hide": "إدخال مسار مخصص للأخفاء",
 "Add custom path": "أدخال مسار مخصص",
@@ -381,8 +377,8 @@ window.i18nDict.$$ = {
 "Cleaner completed": "تم الحذف",
 "Unhide completed!": "تم الأخفاء",
 
-/* Generic UI */
-"Add": "أضافة",
+  /* Generic UI */
+ "Add": "أضافة",
 "Apply Patch": "حفظ التصحيح",
 "Activity Log": "سجل النشاط",
 "Automation Service": "خدمة التشغيل التلقائي",
@@ -505,8 +501,7 @@ window.i18nDict.$$ = {
 "System build Properties": "خصائص بناء النظام",
 "System compatibility": "توافقية النظام",
 "Tap refresh to scan": "اضغط تحديث للبحث",
-"This feature depends on Zygisk to function properly. You're currently running in Zygisk-less mode, which means this feature isn't available. To use it, you'll need to disable zygiskless mode, flash integrity box and reboot your device": "‎‫تعتمد هذه الميزة على Zygisk لتعمل بشكل صحيح. أنت تعمل حاليًا في وضع بدون Zygisk، مما يعني أن هذه الميزة غير متاحة. لاستخدامها، ستحتاج إلى تعطيل وضع بدون Zygisk، وتثبيت وحدة صندوق النزاهة، وإعادة تشغيل جهازك‬‎
-",
+"This feature depends on Zygisk to function properly. You're currently running in Zygisk-less mode, which means this feature isn't available. To use it, you'll need to disable zygiskless mode, flash integrity box and reboot your device": "‎‫تعتمد هذه الميزة على Zygisk لتعمل بشكل صحيح. أنت تعمل حاليًا في وضع بدون Zygisk، مما يعني أن هذه الميزة غير متاحة. لاستخدامها، ستحتاج إلى تعطيل وضع بدون Zygisk، وتثبيت وحدة صندوق النزاهة، وإعادة تشغيل جهازك‬‎",
 "This feature is currently under development. Stay tuned for the upcoming release.": "هذه الميزة تحت التطوير . انتضر الأصدارات الجديدة",
 "This will be done after reboot": "سيتم تنفيذ هذا بعد إعادة التشغيل",
 "This will be done via action button": "سيتم تنفيذ هذا بعد الضغط على أجراء",
@@ -527,18 +522,18 @@ window.i18nDict.$$ = {
 "GENERATE": "انشاء",
 "spoofed": "مزيف",
 
-/* Mode descriptions */
+  /* Mode descriptions */
 ": Balanced": "متوازن",
 ": Fast & safest": "سريع وأمن",
 ": Thorough but slow": "شامل ولكن بطئ",
 
-/* Profile page more */
+  /* Profile page more */
 "Clear GMS Data - Clears Play Store & Google Play Services data to fix device certification issues. Just make sure you're passing DEVICE or STRONG integrity": "ومتحر بلاي لكن تأكد من تخطيك للنزاهة google حذف بيانات خدمات",
 "Basic Integrity": "النزاهة المتوسطة",
 "Play Services": "google خدمات",
 "Play Store": "متجر بلاي",
 
-/* Flags items */
+  /* Flags items */
 "ACTION COMPLETE ✅": "✅️اكتمل الاجراء ",
 "Go, Login your account": "اذهب ، وسجل الدخول لحسابك",
 "Action Flags": "علامة الاجراء",
@@ -547,15 +542,12 @@ window.i18nDict.$$ = {
 "Boot Flags": "علامة التشغيل",
 "Reboot Flags": "علامة اعادة التشغيل ",
 "Adds a floating back button overlay for easier iframe navigation.": "اضافة علامة زر الرجوع العائم لتسهيل التحرك في الوحدة",
-"Aggressively removes all LineageOS traces including props, services and build fingerprints on boot.": "يزيل جميع اثار روم LineageOs بشكل فعال بما في ذلك الخصائص والخدمات وبصمات البناء عند بدء التشغيل
-",
-"Cleans suspicious files and directories that may reveal root access or module presence on boot.": "ينظف الملفات والمجلدات المشبوهة التي قد تكشف عن الوصول إلى الجذر أو وجود الوحدة عند بدء التشغيل
-",
+"Aggressively removes all LineageOS traces including props, services and build fingerprints on boot.": "يزيل جميع اثار روم LineageOs بشكل فعال بما في ذلك الخصائص والخدمات وبصمات البناء عند بدء التشغيل",
+"Cleans suspicious files and directories that may reveal root access or module presence on boot.": "ينظف الملفات والمجلدات المشبوهة التي قد تكشف عن الوصول إلى الجذر أو وجود الوحدة عند بدء التشغيل",
 "Clear Gapps Logs": "حذف سجلات تطبيقات كوكل",
 "Clear LSposed": "حذف سجلات LSposed",
 "Clear Module Logs": "حذف سجلات الوحدة",
-"Disables all extra spoofing features for maximum compatibility mode.": "تعطيل جميع ميزات التزييف الإضافية من أجل التوافق الأقصى
-",
+"Disables all extra spoofing features for maximum compatibility mode.": "تعطيل جميع ميزات التزييف الإضافية من أجل التوافق الأقصى",
 "Disables automatic Telegram link redirects from the WebUI.": "تعطيل التوجيه التلقائي لروابط التليغرام من واجهة الوحدة",
 "Downloads required integrity tools and configurations.": "التنزيل يتطلب ادوات التحقق من السلامة والتكوينات",
 "Enables right-hand-side back gesture swipe area in WebUI iframes.": "تمكين ايماءة الرجوع في ايمن الصفحة من الواجهة",
@@ -624,8 +616,8 @@ window.i18nDict.$$ = {
 "Medium Risk": "مجازفة متوسطة",
 "Low Risk": "مجازفة حفيفة",
 
-/* BootHash more */
-"Boot hash applied": "تم تطبيق Boot hash",
+  /* BootHash more */
+ "Boot hash applied": "تم تطبيق Boot hash",
 "Boot hash removed": "تم حذف Boot hash",
 "Rebooting…": "...اعادة التشغيل",
 "Failed to initialize": "فشل التهيئة",
@@ -633,103 +625,102 @@ window.i18nDict.$$ = {
 "No existing patch found": "لا يوجد تصحيح متوفر",
 "Reading patch file...": "قرائة ملف التصحيح",
 
-/* Backup/Restore */
+  /* Backup/Restore */
 "Backup created successfully!": "تم انشاء نسخة احتياطية",
 "Backup failed:": "فشل انشاء نسخة احتياطية",
 "Restore failed:": "فشلت الاستعادة",
 "Restored from backup.": "تم الاستعادة من نسخة احتياطية",
 "Saved.": "تم الحفظ",
 
-/* Blacklist */
-"All apps already blacklisted": "كل التطبيقات بالفعل في القائمة السوداء",
+  /* Blacklist */
+  "All apps already blacklisted": "كل التطبيقات بالفعل في القائمة السوداء",
 "Failed to update blacklist": "فشل في تحديث القائمة السوداء",
 "Package is blacklisted": "الحزمة في القائمة السوداء",
 
-/* Spoofing conflicts */
+  /* Spoofing conflicts */
 "Rebooting...": "اعادة التشغيل...",
 "Resetting configuration...": "اعادة ضبط الاعدادات...",
 
-/* IntegrityBox Assistant - Questions */
+  /* IntegrityBox Assistant - Questions */
 "Show Frequently Asked Questions": "عرض الاسئلة الشائعة",
 "Didn’t find what you need?": "هل وجدت ما تريد ؟",
 "Curiosity": "فضول",
 
-/* General Questions */
-"What are the requirements?": "ماهي المتطلبات ؟",
-"Well, it depends on your ROM, Zygisk isn't needed if you're using Google pixel stock ROM. Anyways here are the recommended modules which works universally on all devices.": "حسنًا، يعتمد ذلك على نظام التشغيل الخاص بك، Zygisk غير مطلوب إذا كنت تستخدم نظام التشغيل الأصلي من Google Pixel. على أي حال، إليك الوحدات النمطية الموصى بها والتي تعمل بشكل عام على جميع الأجهزة
-"You can download them by opening integrity box's webui": "يمكنك تحميل جميع الوحدات بفتح واجهة وحدة النزاهة",
-"Module Settings > Integrity downloader": "من قائمة اعدادات الوحدة ثم محمل المفتاح",
-"Go back to modules tab & click on integrity box's action button. Modules will be downloaded into /sdcard/Downloads/IntegrityModules folder": "ارجع الى قائمة الوحدات في تطبيق الروت ثم اضغط على زر الاجراء سيتم تنزيلها في مجلد Downloads",
-"Why does my device pass Play Integrity but still fail ‘Device certification / license’ within apps?": "لماذا يجتاز جهازي اختبار النزاهة Play ولكنه لا يزال يفشل في شهادة الجهاز / الترخيص داخل التطبيقات؟ ,
-"Passing Play Integrity doesn’t always mean device is certified.": "اجتياز النزاهة لا يعني هذا انه الجهاز معتمد ",
-"Google Play certification/licensing checks may also require valid GMS certification, correct vendor‑partition signatures, valid attestation keys, and genuine vendor keybox.": "قد تتطلب شهادة متجر بلاي تراخيص صالحة من الهاتف والشركة المصنعة سارة المفعول للاجتياز ",
-"If those are tampered with (by custom ROM, modded firmware, or spoof), apps checking “certified device status” might still fail even if integrity test passes.": "إذا تم التلاعب بها (عن طريق ROM مخصص، أو برنامج ثابت معدل، أو تزييف)، فقد تفشل التطبيقات التي تتحقق من "حالة الجهاز المعتمد" حتى لو اجتاز اختبار السلامة",
-"Fix Device not Certified": "اصلاح الجهاز غير معتمد",
-"You need to pass atleast DEVICE INTEGRITY then Open WebUI, Go to FIX DEVICE IS NOT CERTIFIED button, keep in mind that your root & zygisk should be hidden properly, otherwise it won't work.": "يجب عليك اجتياز على الاقل النزاهة المتوسطة عندها افتح واجهة الوحدة واضغط على زر اصلاح الجهاز غير معتمد . تذكر عليك اخفاء صلاحيات الجذر وزيجسك اذا لم تخفيها بشكل صحيح تفشل العملية",
-"I don't know how to use WebUI": "لا اعرف كيف استخدم واجهة التطبيق",
-"I got you bro, If you're using magisk, then you've to Install KSU WebUI app & grant it root permission to use WebUI features of you're installed modules.": "أنا معك يا أخي، إذا كنت تستخدم Magisk، فعليك تثبيت تطبيق KSU WebUI ومنحه صلاحيات الجذر لاستخدام ميزات واجهة الوحدة ",
-"If you want to know about the usage of a specific setting, check Integrity Box's github repository, everything is well explained there.": "اذا لاتعرف كيفية استخدام اعداد معين في الوحدة اذهب الى موقع github الخاص بالوحدة كل شي مشروح هناك ",
-"Fingerprint not working": "البصمة لا تعمل",
-"Open WebUI, Go to MODULE SETTING, and enable KILL SWITCH toggle & reboot your device": "افتح واجهة الوحدة واذهب الى اعدادات الوحدة وقم بتفعيل زر قتل الاعداد واعد تشغيل الهاتف",
-"Magisk Tips?": "نصائح لمستخدمي ماجسك",
-"If you're using magisk, make sure to disable magisk's built-in Zygisk & add your banking apps into denylist. GMS & Play Services process will be added automatically via Integrity Box. Also hide your magisk app by changing it's name from magisk settings..": "اذا كنت تستخدم ماجسك قم بايقاف الزيجسك الخاص بماجسك واضف تطبيقات البنوك الى قائمة الرفض وخدمات كوكل والعمليات الخاص به ستضاف تلقائيا بواسطة وحدة النزاهة وايضا اخفي ماجسك عن طريق تغيير الحزمة او اسمه ",
+  /* General Questions */
+  "What are the requirements?": "ماهي المتطلبات ؟",
+  "Well, it depends on your ROM, Zygisk isn't needed if you're using Google pixel stock ROM. Anyways here are the recommended modules which works universally on all devices.": "حسنًا، يعتمد ذلك على نظام التشغيل الخاص بك، Zygisk غير مطلوب إذا كنت تستخدم نظام التشغيل الأصلي من Google Pixel. على أي حال، إليك الوحدات النمطية الموصى بها والتي تعمل بشكل عام على جميع الأجهزة",
+  "You can download them by opening integrity box's webui": "يمكنك تحميل جميع الوحدات بفتح واجهة وحدة النزاهة",
+  "Module Settings > Integrity downloader": "模块设置 > Integrity 下载器",
+  "Go back to modules tab & click on integrity box's action button. Modules will be downloaded into /sdcard/Downloads/IntegrityModules folder": "回到模块页，点击 IntegrityBox 的操作按钮。模块会下载到 /sdcard/Downloads/IntegrityModules 文件夹。",
+  "Why does my device pass Play Integrity but still fail ‘Device certification / license’ within apps?": "为什么设备通过了 Play Integrity，但应用内仍提示设备认证或许可证失败？",
+  "Passing Play Integrity doesn’t always mean device is certified.": "通过 Play Integrity 不一定代表设备已完成认证。",
+  "Google Play certification/licensing checks may also require valid GMS certification, correct vendor‑partition signatures, valid attestation keys, and genuine vendor keybox.": "Google Play 的认证或许可证检查可能还需要有效的 GMS 认证、正确的 vendor 分区签名、有效的 attestation key，以及真实的 vendor Keybox。",
+  "If those are tampered with (by custom ROM, modded firmware, or spoof), apps checking “certified device status” might still fail even if integrity test passes.": "如果这些内容被 custom ROM、修改版固件或伪装改动过，即使 Integrity 测试通过，检查认证设备状态的应用仍可能失败。",
+  "Fix Device not Certified": "修复设备未认证",
+  "You need to pass atleast DEVICE INTEGRITY then Open WebUI, Go to FIX DEVICE IS NOT CERTIFIED button, keep in mind that your root & zygisk should be hidden properly, otherwise it won't work.": "你至少需要通过 DEVICE INTEGRITY。然后打开 WebUI，进入 FIX DEVICE IS NOT CERTIFIED 按钮。注意 root 和 Zygisk 必须正确隐藏，否则不会生效。",
+  "I don't know how to use WebUI": "我不知道怎么用 WebUI",
+  "I got you bro, If you're using magisk, then you've to Install KSU WebUI app & grant it root permission to use WebUI features of you're installed modules.": "如果你使用 Magisk，需要安装 KSU WebUI 应用，并授予 root 权限，才能使用已安装模块的 WebUI 功能。",
+  "If you want to know about the usage of a specific setting, check Integrity Box's github repository, everything is well explained there.": "如果想了解某个设置的具体用途，可以查看 IntegrityBox 的 GitHub 仓库，那里有更完整的说明。",
+  "Fingerprint not working": "Fingerprint 不工作",
+  "Open WebUI, Go to MODULE SETTING, and enable KILL SWITCH toggle & reboot your device": "打开 WebUI，进入 MODULE SETTING，启用 KILL SWITCH 开关，然后重启设备。",
+  "Magisk Tips?": "Magisk 使用建议？",
+  "If you're using magisk, make sure to disable magisk's built-in Zygisk & add your banking apps into denylist. GMS & Play Services process will be added automatically via Integrity Box. Also hide your magisk app by changing it's name from magisk settings..": "如果你使用 Magisk，请关闭 Magisk 内置 Zygisk，并把银行应用加入 DenyList。GMS 和 Play Services 进程会由 IntegrityBox 自动加入。同时建议在 Magisk 设置中隐藏 Magisk 应用并改名。",
 
-/* Integrity Questions */
-"Why is Strong Play Integrity failing?": "لماذا تفشل النزاهة القوية ؟",
-"Make sure you have installed the recommended modules. Keep in mind that not all ROMs can pass Play Integrity, no matter you've disabled ROM's inbuilt GMS spoofing or updated keybox/fingerprint. You can also try downgrading your playstore version to v40.0.13-23": "تأكد من تثبيت الوحدات الموصى بها. ضع في اعتبارك أنه لا يمكن لجميع أنظمة التشغيل اجتياز اختبار سلامة التشغيل، بغض النظر عما إذا كنت قد عطلت خاصية انتحال خدمات جوجل المدمجة في نظام التشغيل أو قمت بتحديث صندوق المفاتيح/بصمة الإصبع. يمكنك أيضًا محاولة الرجوع إلى إصدار متجر بلاي v40.0.13-23",
-"Play Integrity fails when bootloader is unlocked (not spoofed) or hardware keybox isn't valid. Check for conflicting modules as well. Sometimes using too many modules/lsposed apps exposes root environment.": "يفشل Play Integrity عندما يكون مُحمل الإقلاع مفتوحًا (وليس مُزيف) أو عندما يكون المفتاح غير صالح. تحقق أيضًا من وجود وحدات نمطية متعارضة. في بعض الأحيان، يؤدي استخدام الكثير من
-الوحدات النمطية/التطبيقات المُقترحة إلى كشف بيئة الجذر",
-"Why do some banking apps still not working even if Play Integrity shows Strong?": "لماذا بعض تطبيقات البنوك مازالت لا تعمل حتى لو تخطيت النزاهة القوية؟",
-"Because many banking apps implement their own root/environment detection, beyond Play Integrity.": "لان الكثير من تطبيقات تكشف بطريقتها الخاصة عن الروت يتجاوز عمل النزاهة",
-"They can check system props (like ro.debuggable), existence of root binaries, SELinux status, unusual filesystem traces, custom kernel or recovery markers, debug build‑flags, and flagged apps etc.": "‎‫يمكنهم التحقق من خصائص النظام (مثل حالة البوتلودر)، او وجود ملفات الجذر، وحالة SELinux، وآثار نظام الملفات غير العادية، وعلامات النواة أو الاسترداد المخصصة، وعلامات بناء التصحيح، والتطبيقات التي تم تزييفها، إلخ.‬‎",
-"Even if Integrity‑Box fixes majority of stuff mentioned above, you still need root‑hiding tools such as HideMyApplist, Denylist etc clean storage (no TWRP folder, no root files visible), and sometimes a clean ROM (stock or near‑stock) for best results.": "حتى لو الوحدة اصلحت كل شي مذكور اعلاه فستظل تحتاج ادوات الروت مثل HMA وحذف مجلد الريكفري ولا توجد ملفات روت ظاهرة ويعتمد على حالة نظام الروم مثل مخصص او الاصلي",
-"I passed Play Integrity but some apps like Google Pay / Wallet / UPI still don’t work, why?": "لقد تخطيت النزاهة لكن بعض التطبيقات لا تعمل مثل محفظة كوكل؟",
-"That’s because passing Play Integrity is only one side.": "هذا بسبب ان تخطي النزاهة ليس الجانب الوحيد",
-"Many “payment/wallet” apps check extra signals like bootloader lock status, vendor keybox validity, hardware‑backed attestation, or app‑specific additional checks.": "بعض تطبيقات المحفظة او الدفع لديها طرق تتحقق اضافية مثل حالة البوتلودر حالة ملفات النظام وحالة النزاهة او حالة الهاردوير وتحققات اضافية اخرى",
-"Also, if your ROM has patched or spoofed GMS (Google Mobile Services) and uses custom keybox/keystore, it may conflict with modules trying to spoof, modules like Tricky Store,sometimes conflict with ROM‑level spoofing.": "ايضا اذا كان الروم الخاص بك مصحح او مزيف خدمات خدمات كوكل وتستخدم مفتاح ربما يتعارض مع وحدات تحاول تزييف . مثل وحدة Tricky Store  التي تتعارض مع مستوى الروم",
-"My device is running a custom ROM, will IntegrityBox work reliably?": "جهازي يعمل بنظام روم مخصص هل وحدة النزاهة هذه ستعمل بشكل موثوق",
-"Yes, but keep in mind that Custom ROMs make things harder.": "نعم. لكن ضع هذا باعتبارك ان الرومات المخصصة تجعل الامور اصعب",
-"Many custom ROMs come with their own modifications to system props, keybox, GMS spoofing or security patch metadata. These changes often interfere with spoofing modules.": "بعض الرومات المخصصة تاتي مع تعديلاتها الخاصة بلنظام هذا ياثر على مدى الكشف",
-"For custom ROMs: first disable or clean any pre‑built spoofing or keybox tricks, restore stock props if possible, then apply Integrity‑Box + trickystore. Only then try passing Device/Strong integrity.": "لمستخدمي الورمات المخصصة : اولا قم بتعطيل او تنظيف التزييفات او المفاتيح السابقة واعد خصائص النظام الاصلية اذا كانت متوفرة عندها حاول تخطي النزاهة",
-"Which modules should I combine with Integrity‑Box to maximize banking‑app compatibility?": "ماهي الوحدات التي يجب علي دمجها مع هذه الوحدة للحصول على اقصى تخطي لتطبيقات البنوك",
-"A commonly recommended setup is:": "الوحدات الموصى بها عادة",
-"Integrity‑Box (for props/keybox spoofing)": "وحدة صندوق النزاهة مثل (Integrity Box)",
-"Clean zygote injection layer (e.g. Zygisk Next)": "وحدة لحقن الزيجسك مثل (Zygisk Next)",
-"DenyList / Hide‑Magisk‑Manager (so root‑manager app isn’t visible) or use spoofed version of KSU manager": "اخفاء الماجسك (يجب اخفاء مدير الروت) او استخدام تطبيق KSU مزيف",
-"Clear Play Store + Google Services data after flashing/patching": "حذف بيانات خدمات كوكل والمتجر بعد التثبيت او التصحيح",
-"Reboot and test using Play Integrity checker/app": "اعد التشغيل وافحص السلامةعبر تطبيقات فحص النزاهة",
-"This combo is often suggested for rooted phones on custom ROMs to pass checks and run banking/UPI apps.": "هذا الخليط عادة هو الموصى به لاجهزة الروت او الروم المخصص لتخطي النزاهة",
-"My banking app still shows ‘root detected’ after passing all integrity checks, what extra measures can help?": "تطبيقات البنوك تستمر باظهار اكتشاف جذر بعد تخطي النزاهة وعمل الخطوات الاضافية؟",
-"Here are extra measures often recommended:": "اليك بعض الاجرائات الاضافية التي ينصح بهة",
-"Remove/rename root‑manager apps (Magisk Manager etc.), or keep them hidden.": "احذف تطبيق الروت لديك مثل ماجسك او ابقيه مخفي",
-"Remove residual traces: TWRP folder, recovery backups, root‑app leftovers in storage.": "احذف مجلد TWRP  والنسخ الاحتياطية وبقايا الجذر ",
-"Use DenyList or Hide‑Magisk + include banking apps.": "استخدم قائمة الرفض واضف تطبيقات البنوك",
-"For custom ROMs: avoid prebuilt ROM‑level spoofing that conflicts with your modules.": "لمستخدمي الروم المخصص تجنب استخدام تصحيحات الروم الموجودة لتعارضها مع هذه الوحدة",
-"Use MEOW 2.0 HMA config": "استخدم ملف اخفاء التطبيقات MEOW 2.0 HMA",
-"Does updating Google Play Services or Play Store break spoofing modules?": "هل تحديث خدمات كوكل والمتجر يؤثر على تخطي النزاهة؟",
-"Often yes. Google Play Services updates may re‑validate keys, vendor certificates or integrity metadata, which may invalidate spoofing or keybox tricks.": "غالبا نعم . خدمات كوكل ربما تفسد المفتاح او شهادة الحماية",
-"After such updates, you may need to reapply spoofing or re‑flash/ modules to retain spoofed integrity. Many forum users report requiring re‑spoof after major Play Services updates.": "تزييف او اعادة تثبيت الوحدة من الممكن ارجاع النزاهة. افاد بعض للمستخدم بهذا الحل",
-"How to clean old root traces fully before applying IntegrityBox and spoofing?": "كيف احذف ملفات الروت القديمة بالكامل قبل تطبيق وحدة النزاهة او التزييف؟",
-"Suggested cleanup steps:": "خطوات التنظيف المقترحة",
-"Uninstall all root‑manager apps and modules.": "الغاء تثبيت جميع تطبيقات الروت والوحدات المثبتة",
-"Remove folders like /sdcard/TWRP etc.": "حذف البقايا يدويا مثل مجلد TWRP",
-"Clear cache/data for Google Services and banking apps.": "حذف بيانات خدمات كوكل والتطبيقات البنكية",
-"Reboot.": "اعد التشغيل ",
-"Then apply the recommended modules.": "ثم قم بتثبيت الوحدات المقترحة",
-"Many users on XDA confirm this full clean + fresh install often resolves persistent root detection issues.": "بعض المستخدمين على موقع XDA  اكدوا هذا التنظيف الكامل والتثبيت النظيف يحل نصف المشاكل ",
-"Why does my device show Basic integrity even after spoofing and proper root hiding?": "لماذا هاتفي يظهر النزاهة المتوسطة فقط حتى لو تم التزييف او اخفاء الروت",
-"If your android version is A13 or above, use SUPREME profile.. if it's A12 or below, then use LEGACY profile with downgraded version (v40.xx) of playstore": "اذا كنت من مستخدمين اندرويد ١٣ او اعلي استخدم ملف تعريف الاحدث واذا كنت من اندرويد ١٢ او اقل استخدم ملف التعريف قديم مع نسخة متجر بلاي (v40.xx)",
-"What if I still fail Strong Integrity even after installing IntegrityBox?": "لماذا ما زال يفشل تخطي النزاهة القوية حتى بعد تثبيت هذه الوحدة",
-"Passing Strong Integrity can also depend on hardware keybox validity, bootloader status, vendor-partition patches, and conflicting modules.": "تخطي النزاهة القوية يمكنه ايضا ان يعتمد على حالة هاردوير جهازك او حالة البوتلودر او تصحيحات الامان او التعارض مع الوحدات الاخرى",
-"If you’re on a custom ROM or have SELinux/permissive, or if other modules tamper with system props, IntegrityBox alone may not be enough.": "اذت كنت من مستخدمين الروم المخصص او كان لديك حالة SELinux متساهل ، او اذا كانت الوحدات تتلاعب بخصائص النظام ، عندها تثبيت هذه الوحدة ليس كافيا",
-"Will using root-hiding modules along with Integrity-Box improve success for banking apps?": "هل سيؤدي استخدام وحدات اخفاء الجذر مع هذه الوحدة تحسن عدم اكتشاف تطبيقات البنوك؟",
-"Often yes, many users report that combining IntegrityBox with root-hiding tools helps avoid detection by banking apps.": "غالبا نغم بعض المستخدمين ابلغو عن دمج هذه الوحدة مع وحدات اخفاء الجذر تحسن عدم كشف تطبيقات البنوك ",
-"However, root-hiding + spoofing is a game of cat–mouse and may not work universally.": "عل كل حال اخفاء الجذر والتزييف مثل لعبة القط والفأر ربما لا تعمل على كل الاجهزة",
-"Why do banking or wallet apps still detect root even though Play Integrity says 'pass'?": "لماذا بعض تطبيقات البنوك يمكنها اكتشاف الجذر حتى لو تخطيت النزاهةالقوية؟",
-"Because Play Integrity is only one part of detection.": "لان النزاهة هي جزء واحد من الاكتشاف",
-"Many apps also perform root/environment detection at runtime. If root-hiding is incomplete or other modules leave traces (e.g. custom recovery folder, SELinux flags, debug props), apps may still detect tampering.": "بعض التطبيقات تقدم كشف بالوقت الفعلي عند استخدامه اذا كان عملية اخفاء الروت غير مكتملة او التزييف لم يكتمل يمكنها اكتشاف الروت ",
+  /* Integrity Questions */
+  "Why is Strong Play Integrity failing?": "لماذا تفشل النزاهة القوية ؟",
+  "Make sure you have installed the recommended modules. Keep in mind that not all ROMs can pass Play Integrity, no matter you've disabled ROM's inbuilt GMS spoofing or updated keybox/fingerprint. You can also try downgrading your playstore version to v40.0.13-23": "تأكد من تثبيت الوحدات الموصى بها. ضع في اعتبارك أنه لا يمكن لجميع أنظمة التشغيل اجتياز اختبار سلامة التشغيل، بغض النظر عما إذا كنت قد عطلت خاصية انتحال خدمات جوجل المدمجة في نظام التشغيل أو قمت بتحديث صندوق المفاتيح/بصمة الإصبع. يمكنك أيضًا محاولة الرجوع إلى إصدار متجر بلاي v40.0.13-23",
+  "Play Integrity fails when bootloader is unlocked (not spoofed) or hardware keybox isn't valid. Check for conflicting modules as well. Sometimes using too many modules/lsposed apps exposes root environment.": "يفشل Play Integrity عندما يكون مُحمل الإقلاع مفتوحًا (وليس مُزيف) أو عندما يكون المفتاح غير صالح. تحقق أيضًا من وجود وحدات نمطية متعارضة. في بعض الأحيان، يؤدي استخدام الكثير من الوحدات النمطية/التطبيقات المُقترحة إلى كشف بيئة الجذر",
+  "Why do some banking apps still not working even if Play Integrity shows Strong?": "لماذا بعض تطبيقات البنوك مازالت لا تعمل حتى لو تخطيت النزاهة القوية؟",
+  "Because many banking apps implement their own root/environment detection, beyond Play Integrity.": "لان الكثير من تطبيقات تكشف بطريقتها الخاصة عن الروت يتجاوز عمل النزاهة",
+  "They can check system props (like ro.debuggable), existence of root binaries, SELinux status, unusual filesystem traces, custom kernel or recovery markers, debug build‑flags, and flagged apps etc.": "‎‫يمكنهم التحقق من خصائص النظام (مثل حالة البوتلودر)، او وجود ملفات الجذر، وحالة SELinux، وآثار نظام الملفات غير العادية، وعلامات النواة أو الاسترداد المخصصة، وعلامات بناء التصحيح، والتطبيقات التي تم تزييفها، إلخ.‬‎",
+  "Even if Integrity‑Box fixes majority of stuff mentioned above, you still need root‑hiding tools such as HideMyApplist, Denylist etc clean storage (no TWRP folder, no root files visible), and sometimes a clean ROM (stock or near‑stock) for best results.": "حتى لو الوحدة اصلحت كل شي مذكور اعلاه فستظل تحتاج ادوات الروت مثل HMA وحذف مجلد الريكفري ولا توجد ملفات روت ظاهرة ويعتمد على حالة نظام الروم مثل مخصص او الاصلي",
+  "I passed Play Integrity but some apps like Google Pay / Wallet / UPI still don’t work, why?": "لقد تخطيت النزاهة لكن بعض التطبيقات لا تعمل مثل محفظة كوكل؟",
+  "That’s because passing Play Integrity is only one side.": "هذا بسبب ان تخطي النزاهة ليس الجانب الوحيد",
+  "Many “payment/wallet” apps check extra signals like bootloader lock status, vendor keybox validity, hardware‑backed attestation, or app‑specific additional checks.": "بعض تطبيقات المحفظة او الدفع لديها طرق تتحقق اضافية مثل حالة البوتلودر حالة ملفات النظام وحالة النزاهة او حالة الهاردوير وتحققات اضافية اخرى",
+  "Also, if your ROM has patched or spoofed GMS (Google Mobile Services) and uses custom keybox/keystore, it may conflict with modules trying to spoof, modules like Tricky Store,sometimes conflict with ROM‑level spoofing.": "ايضا اذا كان الروم الخاص بك مصحح او مزيف خدمات خدمات كوكل وتستخدم مفتاح ربما يتعارض مع وحدات تحاول تزييف . مثل وحدة Tricky Store  التي تتعارض مع مستوى الروم",
+  "My device is running a custom ROM, will IntegrityBox work reliably?": "جهازي يعمل بنظام روم مخصص هل وحدة النزاهة هذه ستعمل بشكل موثوق",
+  "Yes, but keep in mind that Custom ROMs make things harder.": "نعم. لكن ضع هذا باعتبارك ان الرومات المخصصة تجعل الامور اصعب",
+  "Many custom ROMs come with their own modifications to system props, keybox, GMS spoofing or security patch metadata. These changes often interfere with spoofing modules.": "بعض الرومات المخصصة تاتي مع تعديلاتها الخاصة بلنظام هذا ياثر على مدى الكشف",
+  "For custom ROMs: first disable or clean any pre‑built spoofing or keybox tricks, restore stock props if possible, then apply Integrity‑Box + trickystore. Only then try passing Device/Strong integrity.": "لمستخدمي الورمات المخصصة : اولا قم بتعطيل او تنظيف التزييفات او المفاتيح السابقة واعد خصائص النظام الاصلية اذا كانت متوفرة عندها حاول تخطي النزاهة",
+  "Which modules should I combine with Integrity‑Box to maximize banking‑app compatibility?": "ماهي الوحدات التي يجب علي دمجها مع هذه الوحدة للحصول على اقصى تخطي لتطبيقات البنوك",
+  "A commonly recommended setup is:": "الوحدات الموصى بها عادة",
+  "Integrity‑Box (for props/keybox spoofing)": "وحدة صندوق النزاهة مثل (Integrity Box)",
+  "Clean zygote injection layer (e.g. Zygisk Next)": "وحدة لحقن الزيجسك مثل (Zygisk Next)",
+  "DenyList / Hide‑Magisk‑Manager (so root‑manager app isn’t visible) or use spoofed version of KSU manager": "اخفاء الماجسك (يجب اخفاء مدير الروت) او استخدام تطبيق KSU مزيف",
+  "Clear Play Store + Google Services data after flashing/patching": "حذف بيانات خدمات كوكل والمتجر بعد التثبيت او التصحيح",
+  "Reboot and test using Play Integrity checker/app": "اعد التشغيل وافحص السلامةعبر تطبيقات فحص النزاهة",
+  "This combo is often suggested for rooted phones on custom ROMs to pass checks and run banking/UPI apps.": "هذا الخليط عادة هو الموصى به لاجهزة الروت او الروم المخصص لتخطي النزاهة",
+  "My banking app still shows ‘root detected’ after passing all integrity checks, what extra measures can help?": "تطبيقات البنوك تستمر باظهار اكتشاف جذر بعد تخطي النزاهة وعمل الخطوات الاضافية؟",
+  "Here are extra measures often recommended:": "اليك بعض الاجرائات الاضافية التي ينصح بهة",
+  "Remove/rename root‑manager apps (Magisk Manager etc.), or keep them hidden.": "احذف تطبيق الروت لديك مثل ماجسك او ابقيه مخفي",
+  "Remove residual traces: TWRP folder, recovery backups, root‑app leftovers in storage.": "احذف مجلد TWRP  والنسخ الاحتياطية وبقايا الجذر ",
+  "Use DenyList or Hide‑Magisk + include banking apps.": "استخدم قائمة الرفض واضف تطبيقات البنوك",
+  "For custom ROMs: avoid prebuilt ROM‑level spoofing that conflicts with your modules.": "لمستخدمي الروم المخصص تجنب استخدام تصحيحات الروم الموجودة لتعارضها مع هذه الوحدة",
+  "Use MEOW 2.0 HMA config": "استخدم ملف اخفاء التطبيقات MEOW 2.0 HMA",
+  "Does updating Google Play Services or Play Store break spoofing modules?": "هل تحديث خدمات كوكل والمتجر يؤثر على تخطي النزاهة؟",
+  "Often yes. Google Play Services updates may re‑validate keys, vendor certificates or integrity metadata, which may invalidate spoofing or keybox tricks.": "غالبا نعم . خدمات كوكل ربما تفسد المفتاح او شهادة الحماية",
+  "After such updates, you may need to reapply spoofing or re‑flash/ modules to retain spoofed integrity. Many forum users report requiring re‑spoof after major Play Services updates.": "تزييف او اعادة تثبيت الوحدة من الممكن ارجاع النزاهة. افاد بعض للمستخدم بهذا الحل",
+  "How to clean old root traces fully before applying IntegrityBox and spoofing?": "كيف احذف ملفات الروت القديمة بالكامل قبل تطبيق وحدة النزاهة او التزييف؟",
+  "Suggested cleanup steps:": "خطوات التنظيف المقترحة",
+  "Uninstall all root‑manager apps and modules.": "الغاء تثبيت جميع تطبيقات الروت والوحدات المثبتة",
+  "Remove folders like /sdcard/TWRP etc.": "حذف البقايا يدويا مثل مجلد TWRP",
+  "Clear cache/data for Google Services and banking apps.": "حذف بيانات خدمات كوكل والتطبيقات البنكية",
+  "Reboot.": "اعد التشغيل ",
+  "Then apply the recommended modules.": "ثم قم بتثبيت الوحدات المقترحة",
+  "Many users on XDA confirm this full clean + fresh install often resolves persistent root detection issues.": "بعض المستخدمين على موقع XDA  اكدوا هذا التنظيف الكامل والتثبيت النظيف يحل نصف المشاكل ",
+  "Why does my device show Basic integrity even after spoofing and proper root hiding?": "لماذا هاتفي يظهر النزاهة المتوسطة فقط حتى لو تم التزييف او اخفاء الروت",
+  "If your android version is A13 or above, use SUPREME profile.. if it's A12 or below, then use LEGACY profile with downgraded version (v40.xx) of playstore": "اذا كنت من مستخدمين اندرويد ١٣ او اعلي استخدم ملف تعريف الاحدث واذا كنت من اندرويد ١٢ او اقل استخدم ملف التعريف قديم مع نسخة متجر بلاي (v40.xx)",
+  "What if I still fail Strong Integrity even after installing IntegrityBox?": "لماذا ما زال يفشل تخطي النزاهة القوية حتى بعد تثبيت هذه الوحدة",
+  "Passing Strong Integrity can also depend on hardware keybox validity, bootloader status, vendor-partition patches, and conflicting modules.": "تخطي النزاهة القوية يمكنه ايضا ان يعتمد على حالة هاردوير جهازك او حالة البوتلودر او تصحيحات الامان او التعارض مع الوحدات الاخرى",
+  "If you’re on a custom ROM or have SELinux/permissive, or if other modules tamper with system props, IntegrityBox alone may not be enough.": "اذت كنت من مستخدمين الروم المخصص او كان لديك حالة SELinux متساهل ، او اذا كانت الوحدات تتلاعب بخصائص النظام ، عندها تثبيت هذه الوحدة ليس كافيا",
+  "Will using root-hiding modules along with Integrity-Box improve success for banking apps?": "هل سيؤدي استخدام وحدات اخفاء الجذر مع هذه الوحدة تحسن عدم اكتشاف تطبيقات البنوك؟",
+  "Often yes, many users report that combining IntegrityBox with root-hiding tools helps avoid detection by banking apps.": "غالبا نغم بعض المستخدمين ابلغو عن دمج هذه الوحدة مع وحدات اخفاء الجذر تحسن عدم كشف تطبيقات البنوك ",
+  "However, root-hiding + spoofing is a game of cat–mouse and may not work universally.": "عل كل حال اخفاء الجذر والتزييف مثل لعبة القط والفأر ربما لا تعمل على كل الاجهزة",
+  "Why do banking or wallet apps still detect root even though Play Integrity says 'pass'?": "لماذا بعض تطبيقات البنوك يمكنها اكتشاف الجذر حتى لو تخطيت النزاهةالقوية؟",
+  "Because Play Integrity is only one part of detection.": "لان النزاهة هي جزء واحد من الاكتشاف",
+  "Many apps also perform root/environment detection at runtime. If root-hiding is incomplete or other modules leave traces (e.g. custom recovery folder, SELinux flags, debug props), apps may still detect tampering.": "بعض التطبيقات تقدم كشف بالوقت الفعلي عند استخدامه اذا كان عملية اخفاء الروت غير مكتملة او التزييف لم يكتمل يمكنها اكتشاف الروت ",
 
-/* Curiosity Questions /
+  /* Curiosity Questions */
 "After an Android update or ROM update, I have to reapply spoofing, why?": "لماذا يجب علي اعادة التزييف بعد تحديث النظام او تحديث الروم  ؟",
 "Because system updates or ROM changes often overwrite or reset key system files and security metadata.": "لأن تحديثات النظام غالبا تقوم باعادة تهيئة الملفات التي بشأنها الغاء التزييف",
 "Security‑patch date, vendor partition data, keybox validity and build props may be reset.": "قد تتم اعادة تعيين تاريخ التصحيح او حذف المفتاح ",
@@ -762,7 +753,7 @@ window.i18nDict.$$ = {
 "Can this break apps?": "هل هذا يعطل التطبيقات",
 "No.": "لا",
 
-/* Keyword Filters */
+  /* Keyword Filters */
 "Root detection info: Integrity-Box cannot fully hide root by itself.": "معلومات عن تطبيقات الكشف : هذه الوحدة لا يمكن ان تخفي الروت بلكامل لوحدها",
 "Check our Updates Channel: https://t.me/MeowRedirect": "تحقق من القناة https://t.me/MeowRedirect",
 "Hi bro, please select your query so that I can assist you": "مرحبا صديقي الرجاء قم بتحديد سؤالك لمساعدتك",
@@ -770,13 +761,13 @@ window.i18nDict.$$ = {
 "Starting from v28, PIF is not needed when using integrity box": "عند اصدار v28  او اعلى لا تحتاج الى وحدات اخرى عند استخدامك لهذه الوحدة",
 "You can report bugs here: https://t.me/TempMeow": "يمكنك الابلاغ عن اخطاء هنا https://t.me/TempMeow ",
 
-/* Chat Responses */
+  /* Chat Responses */
 "Please type a little more detail so I can help 🙂": "من فضلك اكتب تفاصيل اكثر لاساعدك🙂",
 "Did you mean:": "هل تقصد",
 "I couldn't find an exact match. Please select a FAQ above or contact the developer.": "لم اجد تطابق للسؤال من فضلك اختر الاسئلة او تواصل مع المطور",
 "Unable to open link.": "تعذر فتح الرابط",
 
-/* PropSpoofer ROM names (keep ROM names, translate field labels) */
+  /* PropSpoofer ROM names (keep ROM names, translate field labels) */
 "© IntegrityBox • 2026": "الحقوق محفوظة IntegrityBox •2026",
 "Detecting resetprop-rs binary...": "تم الكشف عن restprop-rs",
 "Found: ": "لا يوجد",
@@ -901,4 +892,3 @@ window.i18nDict.$$ = {
 "Build Tags": "علامة البناء",
 "Build Type": "نوع البناء"
 };
-
