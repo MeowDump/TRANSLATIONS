@@ -37,5 +37,12 @@
     "languages": ["ar"],
     "link": "https://github.com/i3BSKA",
     "avatar": "https://github.com/i3BSKA.png"
+  },
+  {   
+    "name": "LeojGH",
+    "role": "Translator",
+    "languages": ["es"],
+    "link": "https://github.com/LeojGH",
+    "avatar": "https://avatars.githubusercontent.com/u/84208864?v=4"
   }
 ]
