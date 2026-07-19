@@ -70,18 +70,18 @@
       };
     } else if (LANG === 'ar') {
       FRAG = {
-        "Analyzing user apps... (": "###…(",
-        "Checking risky apps... (": "###…(",
-        " installed packages, ": " ###, ",
-        "Found ": "### ",
-        " user apps": " ###",
-        "Active: ": " ###: ",
-        "Loaded: ": " ###: ",
-        "Mapped ": "### ",
-        "Activating ": "### ",
-        "Applying ": "### ",
-        " profile...": " ###…",
-        " profile activated": " ###",
+        "Analyzing user apps... (": "تهيئة تطبيقات المستخدم…(",
+        "Checking risky apps... (": "البحث عن تطبيقات خطرة…(",
+        " installed packages, ": " الحزم المثبتة, ",
+        "Found ": "العثور ",
+        " user apps": " تطبيقات المستخدم",
+        "Active: ": " نشط: ",
+        "Loaded: ": " تم التجهيز: ",
+        "Mapped ": " تم التعيين ",
+        "Activating ": "التنشيط ",
+        "Applying ": " جاري التطبيق",
+        " profile...": " ملف التعريف…",
+        " profile activated": " تم تطبيق ملف التعريف",
         "...": "…"
       };
     }
