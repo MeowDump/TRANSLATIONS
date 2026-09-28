@@ -1,271 +1,272 @@
 (function(){
   "use strict";
   window.i18nDict = window.i18nDict || {};
-  window.i18nBoot = function(){
-    var LANG = "en";
-    try { LANG = localStorage.getItem("ibLang") || "en"; } catch(e){}
-    if (LANG === "en") return;
+  var SCRIPT_BASE=(function(){var s=document.currentScript;return s&&s.src?s.src.replace(/\/meow\.js.*$/,"/"):"TRANSLATIONS/";})();
+  var CACHE_NAME="integrity-box-ui-v2",CACHE_TTL=86400000,CACHE_PREFIX="ibI18nCache:"; var state = window.__ibI18nState = window.__ibI18nState || { lang:"en", started:false, observer:null, loading:null, switching:null, originals:new WeakMap(), rendered:new WeakMap(), attrs:new WeakMap(), attrRendered:new WeakMap() };
 
-    var DICT = window.i18nDict[LANG] || {};
-    var _D = {};
-    Object.entries(DICT).forEach(function(e){ _D[e[0].trim()] = e[1]; });
-
-    // Normalize curly quotes to straight quotes for fallback matching
-    function normalizeQuotes(s){
-      return s
-        .replace(/\u2018/g, "'")
-        .replace(/\u2019/g, "'")
-        .replace(/\u201C/g, '"')
-        .replace(/\u201D/g, '"');
-    }
-
-    var FRAG = {
-      "Analyzing user apps... (": "Analyzing user apps... (",
-      "Checking risky apps... (": "Checking risky apps... (",
-      " installed packages, ": " installed packages, ",
-      "Found ": "Found ",
-      " user apps": " user apps",
-      "Active: ": "Active: ",
-      "Loaded: ": "Loaded: ",
-      "Mapped ": "Mapped ",
-      "Activating ": "Activating ",
-      "Applying ": "Applying ",
-      " profile...": " profile...",
-      " profile activated": " profile activated",
-      "...": "..."
-    };
-
-    // Language-specific fragment overrides
-    if (LANG === 'zh_CN') {
-      FRAG = {
-        "Analyzing user apps... (": "正在分析用户应用... (",
-        "Checking risky apps... (": "正在检查风险应用... (",
-        " installed packages, ": " 个已安装包， ",
-        "Found ": "找到  ",
-        " user apps": " 个用户应用",
-        "Active: ": " 已激活：",
-        "Loaded: ": " 已加载：",
-        "Mapped ": "已映射 ",
-        "Activating ": "正在激活",
-        "Applying ": "正在应用",
-        " profile...": "配置文件...",
-        " profile activated": " 配置文件已激活",
-        "...": "…"
-      };
-    } else if (LANG === 'hi') {
-      FRAG = {
-        "Analyzing user apps... (": "Rukja ... (",
-        "Checking risky apps... (": "Checking... (",
-        " installed packages, ": " Tumhare Apps, ",
-        "Found ": "Mil gya ",
-        " user apps": " Tere installed Apps",
-        "Active: ": "Current: ",
-        "Loaded: ": "Ho gya: ",
-        "Mapped ": "Theek hai ",
-        "Activating ": "Krti hoon ",
-        "Applying ": "Ho rha h ",
-        " profile...": " profile...",
-        " profile activated": " profile active ho gya h",
-        "...": "..."
-      };
-    } else if (LANG === 'es') {
-      FRAG = {
-        "Analyzing user apps... (": "Analizando las apps del usuario...(",
-        "Checking risky apps... (": "Comprobando apps en riesgo...(",
-        " installed packages, ": " Paquetes Instalados, ",
-        "Found ": "Encontrado ",
-        " user apps": " apps del usuario",
-        "Active: ": " Activo: ",
-        "Loaded: ": " Cargado: ",
-        "Mapped ": "Asignado ",
-        "Activating ": "Activando ",
-        "Applying ": "Aplicando ",
-        " profile...": " perfil…",
-        " profile activated": " perfil activado",
-        "...": "…"
-      };
-    } else if (LANG === 'ar') {
-      FRAG = {
-        "Analyzing user apps... (": "تهيئة تطبيقات المستخدم…(",
-        "Checking risky apps... (": "البحث عن تطبيقات خطرة…(",
-        " installed packages, ": " الحزم المثبتة, ",
-        "Found ": "العثور ",
-        " user apps": " تطبيقات المستخدم",
-        "Active: ": " نشط: ",
-        "Loaded: ": " تم التجهيز: ",
-        "Mapped ": " تم التعيين ",
-        "Activating ": "التنشيط ",
-        "Applying ": " جاري التطبيق",
-        " profile...": " ملف التعريف…",
-        " profile activated": " تم تطبيق ملف التعريف",
-        "...": "…"
-      };
-    } else if (LANG === 'id') {
-      FRAG = {
-        "Analyzing user apps... (": "Menganalisis aplikasi pengguna... (",
-        "Checking risky apps... (": "Memeriksa aplikasi berisiko... (",
-        " installed packages, ": " paket terinstal, ",
-        "Found ": "Ditemukan ",
-        " user apps": " aplikasi pengguna",
-        "Active: ": "Aktif: ",
-        "Loaded: ": "Dimuat: ",
-        "Mapped ": "Dipetakan ",
-        "Activating ": "Mengaktifkan ",
-        "Applying ": "Menerapkan ",
-        " profile...": " profil...",
-        " profile activated": " profil diaktifkan",
-        "...": "..."
-      };
-    } else if (LANG === 'ru') {
-      FRAG = {
-        "Analyzing user apps... (": "Анализ приложений пользователя... (",
-        "Checking risky apps... (": "Проверка рискованных приложений... (",
-        " installed packages, ": " установленных пакетов, ",
-        "Found ": "Найдено ",
-        " user apps": " пользовательских приложений",
-        "Active: ": "Активно: ",
-        "Loaded: ": "Загружено: ",
-        "Mapped ": "Сопоставлено ",
-        "Activating ": "Активация ",
-        "Applying ": "Применение ",
-        " profile...": " профиля...",
-        " profile activated": " профиль активирован",
-        "...": "..."
-      };
-    } else if (LANG === 'pl') {
-      FRAG = {
-        "Analyzing user apps... (": "Analizowanie aplikacji użytkownika (",
-        "Checking risky apps... (": "Sprawdzanie ryzykownych aplikacji... (",
-        " installed packages, ": " zainstalowane pakiety， ",
-        "Found ": "Znaleziono ",
-        " user apps": " aplikacje użytkownika",
-        "Active: ": " Aktywne：",
-        "Loaded: ": " Załadowane：",
-        "Mapped ": "Zmapowane ",
-        "Activating ": "Aktywowanie",
-        "Applying ": "Zastosowywanie",
-        " profile...": " profilu..",
-        " profile activated": " profil aktywowany",
-        "...": "..."
-      };
-    }
-
-    function tr(s){
-      s = String(s);
-      var k = s.trim();
-      if (_D[k] != null) return _D[k];
-      // Fallback: try with normalized quotes
-      var kNorm = normalizeQuotes(k);
-      if (_D[kNorm] != null) return _D[kNorm];
-      var out = s;
-      for (var from in FRAG){
-        if (Object.prototype.hasOwnProperty.call(FRAG, from) && out.indexOf(from) !== -1){
-          out = out.split(from).join(FRAG[from]);
-        }
-      }
-      return out;
-    }
-
-    var SKIP = { SCRIPT:1, STYLE:1, NOSCRIPT:1, CODE:1, PRE:1, TEXTAREA:1 };
-
-    function translateTextNode(node){
-      var v = node.nodeValue;
-      if (!v) return;
-      if (node.__ibTranslated) return;
-      var k = v.trim();
-      if (!k) return;
-      if (_D[k] != null) {
-        node.nodeValue = _D[k];
-        node.__ibTranslated = true;
+  function normalize(s){
+    return String(s ?? "").replace(/\u2018/g,"'").replace(/\u2019/g,"'").replace(/\u201C/g,'"').replace(/\u201D/g,'"').trim();
+  }
+  function dict(lang){
+    var d=window.i18nDict[lang]||{}; var out={};
+    Object.keys(d).forEach(function(k){out[normalize(k)]=d[k];});
+    return out;
+  }
+  function fragments(lang){
+    var common={"...":"..."};
+    if(lang==='zh_CN') return Object.assign(common,{"Analyzing user apps... (":"正在分析用户应用... (","Checking risky apps... (":"正在检查风险应用... ("," installed packages, ":" 个已安装包， ","Found ":"找到 "," user apps":" 个用户应用","Active: ":"已激活：","Loaded: ":"已加载：","Mapped ":"已映射 ","Activating ":"正在激活","Applying ":"正在应用"," profile...":" 配置文件..."," profile activated":" 配置文件已激活"});
+    if(lang==='ar') return Object.assign(common,{"Analyzing user apps... (":"جارٍ تحليل تطبيقات المستخدم... (","Checking risky apps... (":"جارٍ فحص التطبيقات الخطرة... ("," installed packages, ":" حزمة مثبتة، ","Found ":"تم العثور على "," user apps":" تطبيقات مستخدم","Active: ":"نشط: ","Loaded: ":"تم التحميل: ","Mapped ":"تمت المطابقة: ","Activating ":"جارٍ التفعيل: ","Applying ":"جارٍ التطبيق: "," profile...":" ملف..."," profile activated":" تم تفعيل الملف"});
+    if(lang==='es') return Object.assign(common,{"Analyzing user apps... (":"Analizando aplicaciones de usuario... (","Checking risky apps... (":"Comprobando aplicaciones de riesgo... ("," installed packages, ":" paquetes instalados, ","Found ":"Encontradas "," user apps":" aplicaciones de usuario","Active: ":"Activo: ","Loaded: ":"Cargado: ","Mapped ":"Asignado: ","Activating ":"Activando: ","Applying ":"Aplicando: "," profile...":" perfil..."," profile activated":" perfil activado"});
+    if(lang==='id') return Object.assign(common,{"Analyzing user apps... (":"Menganalisis aplikasi pengguna... (","Checking risky apps... (":"Memeriksa aplikasi berisiko... ("," installed packages, ":" paket terinstal, ","Found ":"Ditemukan "," user apps":" aplikasi pengguna","Active: ":"Aktif: ","Loaded: ":"Dimuat: ","Mapped ":"Dipetakan: ","Activating ":"Mengaktifkan: ","Applying ":"Menerapkan: "," profile...":" profil..."," profile activated":" profil diaktifkan"});
+    if(lang==='pl') return Object.assign(common,{"Analyzing user apps... (":"Analizowanie aplikacji użytkownika... (","Checking risky apps... (":"Sprawdzanie ryzykownych aplikacji... ("," installed packages, ":" zainstalowanych pakietów, ","Found ":"Znaleziono "," user apps":" aplikacji użytkownika","Active: ":"Aktywne: ","Loaded: ":"Załadowane: ","Mapped ":"Zmapowane: ","Activating ":"Aktywowanie: ","Applying ":"Stosowanie: "," profile...":" profilu..."," profile activated":" profil aktywowany"});
+    if(lang==='ru') return Object.assign(common,{"Analyzing user apps... (":"Анализ приложений пользователя... (","Checking risky apps... (":"Проверка рискованных приложений... ("," installed packages, ":" установленных пакетов, ","Found ":"Найдено "," user apps":" пользовательских приложений","Active: ":"Активно: ","Loaded: ":"Загружено: ","Mapped ":"Сопоставлено: ","Activating ":"Активация: ","Applying ":"Применение: "," profile...":" профиля..."," profile activated":" профиль активирован"});
+    return common;
+  }
+  function tr(value,lang){
+    var raw=String(value ?? ""), key=normalize(raw), d=dict(lang);
+    if(d[key]!==undefined) return d[key];
+    var q=normalize(key); if(d[q]!==undefined) return d[q];
+    var out=raw, fr=fragments(lang); Object.keys(fr).forEach(function(k){if(out.indexOf(k)!==-1)out=out.split(k).join(fr[k]);});
+    return out;
+  }
+  function skipElement(el){
+    if(!el||el.nodeType!==1)return true;
+    if(el.closest&&el.closest('.i18n-skip,#lang-dropdown-community,.lang-dropdown-inline,.material-icons,.material-symbols-outlined,.material-icons-round'))return true;
+    if(el.matches('script,style,noscript,code,pre,textarea'))return true;
+    return false;
+  }
+  function sourceText(node){
+    if(!state.originals.has(node)) state.originals.set(node,node.nodeValue);
+    return state.originals.get(node);
+  }
+  function applyText(node,lang){
+    if(!node||node.nodeType!==3)return;
+    var p=node.parentElement; if(!p||skipElement(p))return;
+    var last=state.rendered.get(node);
+    if(last!==undefined && node.nodeValue!==last) state.originals.set(node,node.nodeValue);
+    var src=sourceText(node); if(!src||!src.trim())return;
+    var translated=lang==='en'?src:tr(src,lang);
+    state.rendered.set(node,translated);
+    if(node.nodeValue!==translated)node.nodeValue=translated;
+  }
+  function applyAttr(el,name,lang){
+    if(skipElement(el))return;
+    var value=el.getAttribute(name); if(value==null||!value.trim())return;
+    var map=state.attrs.get(el); if(!map){map={};state.attrs.set(el,map);}
+    if(map[name]===undefined)map[name]=value;
+    var rendered=state.attrRendered.get(el)||{};
+    if(rendered[name]!==undefined && value!==rendered[name]) map[name]=value;
+    var src=map[name];
+    if(name==='value' && !/^(button|submit|reset)$/i.test(el.type||''))return;
+    var translated=lang==='en'?src:tr(src,lang);
+    rendered[name]=translated; state.attrRendered.set(el,rendered);
+    el.setAttribute(name,translated);
+  }
+  function apply(root,lang){
+    if(!root)return;
+    var wasObserving=!!state.observer;
+    if(wasObserving){state.observer.disconnect();state.observer=null;}
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){return (!n.nodeValue||!n.nodeValue.trim()||skipElement(n.parentElement))?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});
+    var nodes=[]; while(walker.nextNode())nodes.push(walker.currentNode); nodes.forEach(function(n){applyText(n,lang);});
+    var els=root.querySelectorAll?root.querySelectorAll('[placeholder],[title],[aria-label],[alt],input[type="button"],input[type="submit"],input[type="reset"]'):[];
+    Array.prototype.forEach.call(els,function(e){['placeholder','title','aria-label','alt','value'].forEach(function(a){applyAttr(e,a,lang);});});
+    if(wasObserving) observe();
+  }
+  function patchPopup(){
+    if(typeof window.popup!=='function'||window.popup.__ibWrapped)return;
+    var orig=window.popup;
+    function wrapped(msg,type){return orig.call(this,tr(msg,state.lang),type);}
+    wrapped.__ibWrapped=true; window.popup=wrapped;
+  }
+  function observe(){
+    if(state.observer||!document.body)return;
+    state.observer=new MutationObserver(function(ms){
+      ms.forEach(function(m){
+        if(m.type==='characterData'){applyText(m.target,state.lang);return;}
+        Array.prototype.forEach.call(m.addedNodes,function(n){if(n.nodeType===1)apply(n,state.lang);else if(n.nodeType===3)applyText(n,state.lang);});
+      });
+    });
+    state.observer.observe(document.body,{childList:true,subtree:true,characterData:true});
+  }
+  function cacheEnabled(){
+    try{return localStorage.getItem('ibUICache')!=='0'}catch(e){return true}
+  }
+  function cacheUrl(lang){return new URL(encodeURIComponent(lang)+'.js',SCRIPT_BASE).href;}
+  function cacheKey(lang){return CACHE_PREFIX+lang;}
+  function readLocalCache(lang){
+    if(!cacheEnabled())return null;
+    try{
+      var raw=localStorage.getItem(cacheKey(lang)); if(!raw)return null;
+      var data=JSON.parse(raw); if(!data||!data.dict||!data.savedAt)return null;
+      window.i18nDict[lang]=data.dict;
+      if(Date.now()-Number(data.savedAt)>CACHE_TTL)return {dict:data.dict,stale:true}; return {dict:data.dict,stale:false};
+    }catch(e){return null}
+  }
+  function writeLocalCache(lang,data){
+    if(!cacheEnabled())return;
+    try{localStorage.setItem(cacheKey(lang),JSON.stringify({savedAt:Date.now(),dict:data||{}}))}catch(e){}
+  }
+  async function readApiCache(lang){
+    if(!cacheEnabled()||!('caches' in window))return null;
+    try{
+      var cache=await caches.open(CACHE_NAME),res=await cache.match(cacheUrl(lang));
+      if(!res)return null;
+      var text=await res.text(),savedAt=Number(res.headers.get('x-ib-cached-at')||0);
+      if(!text)return null;
+      if(savedAt&&Date.now()-savedAt>CACHE_TTL)return {text:text,stale:true};
+      return {text:text,stale:false};
+    }catch(e){return null}
+  }
+  function evaluate(text,lang){
+    try{new Function(text)(); return !!window.i18nDict[lang]}catch(e){return false}
+  }
+  async function writeApiCache(lang,response,text){
+    if(!cacheEnabled()||!('caches' in window))return;
+    try{
+      var headers=new Headers(response.headers); headers.set('x-ib-cached-at',String(Date.now()));
+      var cachedResponse=new Response(text,{status:response.status,statusText:response.statusText,headers:headers});
+      var cache=await caches.open(CACHE_NAME); await cache.put(cacheUrl(lang),cachedResponse);
+    }catch(e){}
+  }
+  async function refresh(lang){
+    if(!cacheEnabled())return;
+    try{
+      var response=await fetch(cacheUrl(lang),{cache:'reload'});
+      if(!response.ok)throw new Error('Translation request failed');
+      var text=await response.text();
+      if(!evaluate(text,lang))throw new Error('Invalid translation');
+      writeLocalCache(lang,window.i18nDict[lang]);
+      await writeApiCache(lang,response,text);
+    }catch(e){}
+  }
+  async function load(lang){
+    if(lang==='en')return Promise.resolve();
+    if(window.i18nDict[lang])return Promise.resolve();
+    if(state.loading&&state.loading.lang===lang)return state.loading.promise;
+    var p=(async function(){
+      var local=readLocalCache(lang);
+      if(local){
+        if(local.stale)refresh(lang);
         return;
       }
-      var kNorm = normalizeQuotes(k);
-      if (_D[kNorm] != null) {
-        node.nodeValue = _D[kNorm];
-        node.__ibTranslated = true;
+      var cached=await readApiCache(lang);
+      if(cached&&evaluate(cached.text,lang)){
+        writeLocalCache(lang,window.i18nDict[lang]);
+        if(cached.stale)refresh(lang);
+        return;
       }
-    }
-
-    function underSkipped(node, root){
-      var p = node.parentNode;
-      while (p && p !== root){
-        if (p.tagName && SKIP[p.tagName]) return true;
-        if (p.classList && (p.classList.contains("material-icons") || p.classList.contains("material-symbols-outlined"))) return true;
-        p = p.parentNode;
-      }
-      return false;
-    }
-
-    function translateElement(el){
-      if (!el || el.nodeType !== 1) return;
-      if (el.tagName && SKIP[el.tagName]) return;
-      if (el.classList && (el.classList.contains("material-icons") || el.classList.contains("material-symbols-outlined"))) return;
-      var root = el;
-      var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
-        acceptNode: function(n){
-          if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-          return underSkipped(n, root) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      try{
+        var response=await fetch(cacheUrl(lang),{cache:'reload'});
+        if(!response.ok)throw new Error('Translation request failed');
+        var text=await response.text();
+        if(!evaluate(text,lang))throw new Error('Invalid translation');
+        if(cacheEnabled()){
+          writeLocalCache(lang,window.i18nDict[lang]);
+          await writeApiCache(lang,response,text);
         }
-      });
-      while (walker.nextNode()) translateTextNode(walker.currentNode);
-      if (el.querySelectorAll){
-        el.querySelectorAll("[placeholder],[title]").forEach(function(e){
-          if (e.placeholder){ var p = e.placeholder.trim(); if (_D[p] != null) e.placeholder = _D[p]; }
-          if (e.title){ var t = e.title.trim(); if (_D[t] != null) e.title = _D[t]; }
+        return;
+      }catch(e){
+        var fallback=await readApiCache(lang);
+        if(fallback&&evaluate(fallback.text,lang))return;
+        await new Promise(function(resolve,reject){
+          var s=document.createElement('script');
+          s.src=cacheUrl(lang);
+          s.onload=resolve;
+          s.onerror=reject;
+          document.head.appendChild(s);
         });
+        if(!window.i18nDict[lang])throw e;
+        if(cacheEnabled())writeLocalCache(lang,window.i18nDict[lang]);
       }
-    }
-
-    function patchPopup(){
-      if (window.__ibPopupDone) return;
-      if (typeof window.popup === "function" && !window.popup.__ibWrapped){
-        var orig = window.popup;
-        var wrapped = function(msg, type){ return orig.call(this, tr(msg), type); };
-        wrapped.__ibWrapped = true;
-        window.popup = wrapped;
-        window.__ibPopupDone = true;
-      }
-    }
-
-    function boot(){
-      if (window.__ibBooted) return;
-      window.__ibBooted = true;
-      translateElement(document.body || document.documentElement);
+    })();
+    state.loading={lang:lang,promise:p}; return p.finally(function(){state.loading=null;});
+  }
+  function clearPending(){
+    document.documentElement.classList.remove('i18n-pending');
+  }
+  window.i18nSetLanguage=function(lang){
+    lang=lang||'en';
+    if(state.switching&&state.switching.lang===lang)return state.switching.promise;
+    var requested=lang;
+    var promise=load(lang).catch(function(){lang='en';}).then(function(){
+      state.lang=lang;
+      if(lang===requested){try{localStorage.setItem('ibLang',lang)}catch(e){}}
+      applyLanguageDirection(lang);
+      apply(document.body,lang);
       patchPopup();
-      var obs = new MutationObserver(function(ms){
-        for (var i = 0; i < ms.length; i++){
-          var m = ms[i];
-          if (m.type === "characterData"){ 
-            if (!m.target.__ibTranslated) translateTextNode(m.target);
-            continue; 
-          }
-          var added = m.addedNodes;
-          for (var j = 0; j < added.length; j++){
-            var n = added[j];
-            if (n.nodeType === 1) translateElement(n);
-            else if (n.nodeType === 3) translateTextNode(n);
-          }
-        }
-      });
-      obs.observe(document.body || document.documentElement, { childList: true, subtree: true, characterData: true });
-    }
-
-    if (document.readyState === "loading"){
-      document.addEventListener("DOMContentLoaded", boot);
-    } else {
-      boot();
-    }
-    document.addEventListener("DOMContentLoaded", patchPopup);
-    setTimeout(patchPopup, 0);
+      clearPending();
+      window.dispatchEvent(new CustomEvent('ibLanguageChanged',{detail:{lang:lang}}));
+      return lang;
+    }).finally(function(){state.switching=null;});
+    state.switching={lang:lang,promise:promise};
+    return promise;
   };
-  
-    // Listen for language changes from parent window
-    if (window.parent !== window) {
-      window.addEventListener('message', function(e) {
-        if (e.data && e.data.type === 'ibLangChange') {
-          localStorage.setItem('ibLang', e.data.lang);
-          location.reload();
-        }
-      });
+  window.i18nBoot=function(lang){
+    if(state.started){return window.i18nSetLanguage(lang||state.lang);}
+    state.started=true; observe(); return window.i18nSetLanguage(lang||state.lang);
+  };
+  function applyLanguageDirection(lang){var rtl=['ar','fa','he','ur'].indexOf(String(lang||'').toLowerCase())>=0;document.documentElement.dir=rtl?'rtl':'ltr';document.body&& (document.body.dir=rtl?'rtl':'ltr');document.documentElement.classList.toggle('rtl',rtl);document.documentElement.classList.toggle('ltr',!rtl);}
+  window.addEventListener('message',function(e){if(e.data&&e.data.type==='ibLangChange')window.i18nSetLanguage(e.data.lang);});
+  function bindLanguageSelector(){
+    var select=document.getElementById('lang-dropdown-community');
+    if(!select||select.__ibLiveLanguageBound)return;
+    select.__ibLiveLanguageBound=true;
+    select.addEventListener('change',function(e){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      var lang=select.value||'en';
+      try{localStorage.setItem('ibLang',lang)}catch(err){}
+      window.i18nSetLanguage(lang);
+    },true);
+  }
+  function savedLanguage(){
+    try{
+      var saved=localStorage.getItem('ibLang');
+      if(saved&&/^[a-z]{2}(?:_[A-Z]{2})?$/.test(saved))return saved;
+    }catch(e){}
+    return 'en';
+  }
+  function seedCachedLanguage(lang){
+    if(lang==='en'||!cacheEnabled())return false;
+    var cached=readLocalCache(lang);
+    if(cached&&cached.dict){
+      state.lang=lang;
+      applyLanguageDirection(lang);
+      return true;
     }
+    return false;
+  }
+  function boot(){
+    bindLanguageSelector();
+    var saved=savedLanguage();
+    state.lang=saved;
+    if(saved!=='en'){
+      if(!seedCachedLanguage(saved))document.documentElement.classList.add('i18n-pending');
+      state.started=true;
+      observe();
+      window.__ibI18nReady=window.i18nBoot(saved);
+    }else{
+      state.started=true;
+      observe();
+      patchPopup();
+      applyLanguageDirection('en');
+      clearPending();
+      window.__ibI18nReady=Promise.resolve('en');
+    }
+  }
+  window.i18nEnsureCached=function(lang){
+    if(!cacheEnabled()||!lang||lang==='en')return Promise.resolve();
+    var local=readLocalCache(lang);
+    if(local&&!local.stale)return Promise.resolve();
+    if(local&&local.stale)return refresh(lang);
+    if(window.i18nDict[lang]){
+      writeLocalCache(lang,window.i18nDict[lang]);
+      return refresh(lang);
+    }
+    return load(lang);
+  };
+  window.i18nClearCache=function(){
+    try{Object.keys(localStorage).filter(function(k){return k.indexOf(CACHE_PREFIX)===0;}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}
+  };
+  boot();
 })();
