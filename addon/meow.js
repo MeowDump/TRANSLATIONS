@@ -1,5 +1,3 @@
-Türkçe dil desteği (tr) eklenmiş ve tüm fonksiyonları eksiksiz barındıran tek parça (komple) JavaScript kodunun tamamı aşağıdadır. Doğrudan kopyalayıp projenizdeki meow.js veya ilgili ana script dosyasına yapıştırabilirsiniz:
-
 (function(){
   "use strict";
   window.i18nDict = window.i18nDict || {};
