@@ -137,7 +137,6 @@ Türkçe dil desteği (tr) eklenmiş ve tüm fonksiyonları eksiksiz barındıra
       var response=await fetch(cacheUrl(lang),{cache:'reload'});
       if(!response.ok)throw new Error('Translation request failed');
       var text=await response.text();
-
 if(!evaluate(text,lang))throw new Error('Invalid translation');
 writeLocalCache(lang,window.i18nDict[lang]);
 await writeApiCache(lang,response,text);
