@@ -14,7 +14,7 @@
   }
   function fragments(lang){
     var common=
-    {"...":"…"};
+ {"...":"..."};
     if(lang==='tr') return Object.assign(common,{"Analyzing user apps... (":"Kullanıcı uygulamaları analiz ediliyor... (","Checking risky apps... (":"Riskli uygulamalar kontrol ediliyor... ("," installed packages, ":" yüklü paket, ","Found ":"Bulundu "," user apps":" kullanıcı uygulaması","Active: ":"Aktif: ","Loaded: ":"Yüklendi: ","Mapped ":"Eşleştirildi ","Activating ":"Aktifleştiriliyor ","Applying ":"Uygulanıyor "," profile...":" profili..."," profile activated":" profili aktifleştirildi"});
     if(lang==='zh_CN') return Object.assign(common,{"Analyzing user apps... (":"正在分析用户应用... (","Checking risky apps... (":"正在检查风险应用... ("," installed packages, ":" 个已安装包， ","Found ":"找到 "," user apps":" 个用户应用","Active: ":"已激活：","Loaded: ":"已加载：","Mapped ":"已映射 ","Activating ":"正在激活","Applying ":"正在应用"," profile...":" 配置文件..."," profile activated":" 配置文件已激活"});
     if(lang==='ar') return Object.assign(common,{"Analyzing user apps... (":"جارٍ تحليل تطبيقات المستخدم... (","Checking risky apps... (":"جارٍ فحص التطبيقات الخطرة... ("," installed packages, ":" حزمة مثبتة، ","Found ":"تم العثور على "," user apps":" تطبيقات مستخدم","Active: ":"نشط: ","Loaded: ":"تم التحميل: ","Mapped ":"تمت المطابقة: ","Activating ":"جارٍ التفعيل: ","Applying ":"جارٍ التطبيق: "," profile...":" ملف..."," profile activated":" تم تفعيل الملف"});
