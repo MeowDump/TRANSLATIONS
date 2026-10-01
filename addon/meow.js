@@ -1,3 +1,5 @@
+Türkçe dil desteği (tr) eklenmiş ve tüm fonksiyonları eksiksiz barındıran tek parça (komple) JavaScript kodunun tamamı aşağıdadır. Doğrudan kopyalayıp projenizdeki meow.js veya ilgili ana script dosyasına yapıştırabilirsiniz:
+
 (function(){
   "use strict";
   window.i18nDict = window.i18nDict || {};
@@ -13,7 +15,8 @@
     return out;
   }
   function fragments(lang){
-    var common={"...":"..."};
+    var common={"...":"…"};
+    if(lang==='tr') return Object.assign(common,{"Analyzing user apps... (":"Kullanıcı uygulamaları analiz ediliyor... (","Checking risky apps... (":"Riskli uygulamalar kontrol ediliyor... ("," installed packages, ":" yüklü paket, ","Found ":"Bulundu "," user apps":" kullanıcı uygulaması","Active: ":"Aktif: ","Loaded: ":"Yüklendi: ","Mapped ":"Eşleştirildi ","Activating ":"Aktifleştiriliyor ","Applying ":"Uygulanıyor "," profile...":" profili..."," profile activated":" profili aktifleştirildi"});
     if(lang==='zh_CN') return Object.assign(common,{"Analyzing user apps... (":"正在分析用户应用... (","Checking risky apps... (":"正在检查风险应用... ("," installed packages, ":" 个已安装包， ","Found ":"找到 "," user apps":" 个用户应用","Active: ":"已激活：","Loaded: ":"已加载：","Mapped ":"已映射 ","Activating ":"正在激活","Applying ":"正在应用"," profile...":" 配置文件..."," profile activated":" 配置文件已激活"});
     if(lang==='ar') return Object.assign(common,{"Analyzing user apps... (":"جارٍ تحليل تطبيقات المستخدم... (","Checking risky apps... (":"جارٍ فحص التطبيقات الخطرة... ("," installed packages, ":" حزمة مثبتة، ","Found ":"تم العثور على "," user apps":" تطبيقات مستخدم","Active: ":"نشط: ","Loaded: ":"تم التحميل: ","Mapped ":"تمت المطابقة: ","Activating ":"جارٍ التفعيل: ","Applying ":"جارٍ التطبيق: "," profile...":" ملف..."," profile activated":" تم تفعيل الملف"});
     if(lang==='es') return Object.assign(common,{"Analyzing user apps... (":"Analizando aplicaciones de usuario... (","Checking risky apps... (":"Comprobando aplicaciones de riesgo... ("," installed packages, ":" paquetes instalados, ","Found ":"Encontradas "," user apps":" aplicaciones de usuario","Active: ":"Activo: ","Loaded: ":"Cargado: ","Mapped ":"Asignado: ","Activating ":"Activando: ","Applying ":"Aplicando: "," profile...":" perfil..."," profile activated":" perfil activado"});
@@ -134,139 +137,140 @@
       var response=await fetch(cacheUrl(lang),{cache:'reload'});
       if(!response.ok)throw new Error('Translation request failed');
       var text=await response.text();
-      if(!evaluate(text,lang))throw new Error('Invalid translation');
-      writeLocalCache(lang,window.i18nDict[lang]);
-      await writeApiCache(lang,response,text);
-    }catch(e){}
-  }
-  async function load(lang){
-    if(lang==='en')return Promise.resolve();
-    if(window.i18nDict[lang])return Promise.resolve();
-    if(state.loading&&state.loading.lang===lang)return state.loading.promise;
-    var p=(async function(){
-      var local=readLocalCache(lang);
-      if(local){
-        if(local.stale)refresh(lang);
-        return;
-      }
-      var cached=await readApiCache(lang);
-      if(cached&&evaluate(cached.text,lang)){
-        writeLocalCache(lang,window.i18nDict[lang]);
-        if(cached.stale)refresh(lang);
-        return;
-      }
-      try{
-        var response=await fetch(cacheUrl(lang),{cache:'reload'});
-        if(!response.ok)throw new Error('Translation request failed');
-        var text=await response.text();
-        if(!evaluate(text,lang))throw new Error('Invalid translation');
-        if(cacheEnabled()){
-          writeLocalCache(lang,window.i18nDict[lang]);
-          await writeApiCache(lang,response,text);
-        }
-        return;
-      }catch(e){
-        var fallback=await readApiCache(lang);
-        if(fallback&&evaluate(fallback.text,lang))return;
-        await new Promise(function(resolve,reject){
-          var s=document.createElement('script');
-          s.src=cacheUrl(lang);
-          s.onload=resolve;
-          s.onerror=reject;
-          document.head.appendChild(s);
-        });
-        if(!window.i18nDict[lang])throw e;
-        if(cacheEnabled())writeLocalCache(lang,window.i18nDict[lang]);
-      }
-    })();
-    state.loading={lang:lang,promise:p}; return p.finally(function(){state.loading=null;});
-  }
-  function clearPending(){
-    document.documentElement.classList.remove('i18n-pending');
-  }
-  window.i18nSetLanguage=function(lang){
-    lang=lang||'en';
-    if(state.switching&&state.switching.lang===lang)return state.switching.promise;
-    var requested=lang;
-    var promise=load(lang).catch(function(){lang='en';}).then(function(){
-      state.lang=lang;
-      if(lang===requested){try{localStorage.setItem('ibLang',lang)}catch(e){}}
-      applyLanguageDirection(lang);
-      apply(document.body,lang);
-      patchPopup();
-      clearPending();
-      window.dispatchEvent(new CustomEvent('ibLanguageChanged',{detail:{lang:lang}}));
-      return lang;
-    }).finally(function(){state.switching=null;});
-    state.switching={lang:lang,promise:promise};
-    return promise;
-  };
-  window.i18nBoot=function(lang){
-    if(state.started){return window.i18nSetLanguage(lang||state.lang);}
-    state.started=true; observe(); return window.i18nSetLanguage(lang||state.lang);
-  };
-  function applyLanguageDirection(lang){var rtl=['ar','fa','he','ur'].indexOf(String(lang||'').toLowerCase())>=0;document.documentElement.dir=rtl?'rtl':'ltr';document.body&& (document.body.dir=rtl?'rtl':'ltr');document.documentElement.classList.toggle('rtl',rtl);document.documentElement.classList.toggle('ltr',!rtl);}
-  window.addEventListener('message',function(e){if(e.data&&e.data.type==='ibLangChange')window.i18nSetLanguage(e.data.lang);});
-  function bindLanguageSelector(){
-    var select=document.getElementById('lang-dropdown-community');
-    if(!select||select.__ibLiveLanguageBound)return;
-    select.__ibLiveLanguageBound=true;
-    select.addEventListener('change',function(e){
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      var lang=select.value||'en';
-      try{localStorage.setItem('ibLang',lang)}catch(err){}
-      window.i18nSetLanguage(lang);
-    },true);
-  }
-  function savedLanguage(){
-    try{
-      var saved=localStorage.getItem('ibLang');
-      if(saved&&/^[a-z]{2}(?:_[A-Z]{2})?$/.test(saved))return saved;
-    }catch(e){}
-    return 'en';
-  }
-  function seedCachedLanguage(lang){
-    if(lang==='en'||!cacheEnabled())return false;
-    var cached=readLocalCache(lang);
-    if(cached&&cached.dict){
-      state.lang=lang;
-      applyLanguageDirection(lang);
-      return true;
-    }
-    return false;
-  }
-  function boot(){
-    bindLanguageSelector();
-    var saved=savedLanguage();
-    state.lang=saved;
-    if(saved!=='en'){
-      if(!seedCachedLanguage(saved))document.documentElement.classList.add('i18n-pending');
-      state.started=true;
-      observe();
-      window.__ibI18nReady=window.i18nBoot(saved);
-    }else{
-      state.started=true;
-      observe();
-      patchPopup();
-      applyLanguageDirection('en');
-      clearPending();
-      window.__ibI18nReady=Promise.resolve('en');
-    }
-  }
-  window.i18nEnsureCached=function(lang){
-    if(!cacheEnabled()||!lang||lang==='en')return Promise.resolve();
-    var local=readLocalCache(lang);
-    if(local&&!local.stale)return Promise.resolve();
-    if(local&&local.stale)return refresh(lang);
-    if(window.i18nDict[lang]){
-      writeLocalCache(lang,window.i18nDict[lang]);
-      return refresh(lang);
-    }
-    return load(lang);
-  };
-  window.i18nClearCache=function(){
-    try{Object.keys(localStorage).filter(function(k){return k.indexOf(CACHE_PREFIX)===0;}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}
-  };
-  boot();
+
+if(!evaluate(text,lang))throw new Error('Invalid translation');
+writeLocalCache(lang,window.i18nDict[lang]);
+await writeApiCache(lang,response,text);
+}catch(e){}
+}
+async function load(lang){
+if(lang==='en')return Promise.resolve();
+if(window.i18nDict[lang])return Promise.resolve();
+if(state.loading&&state.loading.lang===lang)return state.loading.promise;
+var p=(async function(){
+var local=readLocalCache(lang);
+if(local){
+if(local.stale)refresh(lang);
+return;
+}
+var cached=await readApiCache(lang);
+if(cached&&evaluate(cached.text,lang)){
+writeLocalCache(lang,window.i18nDict[lang]);
+if(cached.stale)refresh(lang);
+return;
+}
+try{
+var response=await fetch(cacheUrl(lang),{cache:'reload'});
+if(!response.ok)throw new Error('Translation request failed');
+var text=await response.text();
+if(!evaluate(text,lang))throw new Error('Invalid translation');
+if(cacheEnabled()){
+writeLocalCache(lang,window.i18nDict[lang]);
+await writeApiCache(lang,response,text);
+}
+return;
+}catch(e){
+var fallback=await readApiCache(lang);
+if(fallback&&evaluate(fallback.text,lang))return;
+await new Promise(function(resolve,reject){
+var s=document.createElement('script');
+s.src=cacheUrl(lang);
+s.onload=resolve;
+s.onerror=reject;
+document.head.appendChild(s);
+});
+if(!window.i18nDict[lang])throw e;
+if(cacheEnabled())writeLocalCache(lang,window.i18nDict[lang]);
+}
+})();
+state.loading={lang:lang,promise:p}; return p.finally(function(){state.loading=null;});
+}
+function clearPending(){
+document.documentElement.classList.remove('i18n-pending');
+}
+window.i18nSetLanguage=function(lang){
+lang=lang||'en';
+if(state.switching&&state.switching.lang===lang)return state.switching.promise;
+var requested=lang;
+var promise=load(lang).catch(function(){lang='en';}).then(function(){
+state.lang=lang;
+if(lang===requested){try{localStorage.setItem('ibLang',lang)}catch(e){}}
+applyLanguageDirection(lang);
+apply(document.body,lang);
+patchPopup();
+clearPending();
+window.dispatchEvent(new CustomEvent('ibLanguageChanged',{detail:{lang:lang}}));
+return lang;
+}).finally(function(){state.switching=null;});
+state.switching={lang:lang,promise:promise};
+return promise;
+};
+window.i18nBoot=function(lang){
+if(state.started){return window.i18nSetLanguage(lang||state.lang);}
+state.started=true; observe(); return window.i18nSetLanguage(lang||state.lang);
+};
+function applyLanguageDirection(lang){var rtl=['ar','fa','he','ur'].indexOf(String(lang||'').toLowerCase())>=0;document.documentElement.dir=rtl?'rtl':'ltr';document.body&& (document.body.dir=rtl?'rtl':'ltr');document.documentElement.classList.toggle('rtl',rtl);document.documentElement.classList.toggle('ltr',!rtl);}
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='ibLangChange')window.i18nSetLanguage(e.data.lang);});
+function bindLanguageSelector(){
+var select=document.getElementById('lang-dropdown-community');
+if(!select||select.__ibLiveLanguageBound)return;
+select.__ibLiveLanguageBound=true;
+select.addEventListener('change',function(e){
+e.preventDefault();
+e.stopImmediatePropagation();
+var lang=select.value||'en';
+try{localStorage.setItem('ibLang',lang)}catch(err){}
+window.i18nSetLanguage(lang);
+},true);
+}
+function savedLanguage(){
+try{
+var saved=localStorage.getItem('ibLang');
+if(saved&&/^[a-z]{2}(?:_[A-Z]{2})?$/.test(saved))return saved;
+}catch(e){}
+return 'en';
+}
+function seedCachedLanguage(lang){
+if(lang==='en'||!cacheEnabled())return false;
+var cached=readLocalCache(lang);
+if(cached&&cached.dict){
+state.lang=lang;
+applyLanguageDirection(lang);
+return true;
+}
+return false;
+}
+function boot(){
+bindLanguageSelector();
+var saved=savedLanguage();
+state.lang=saved;
+if(saved!=='en'){
+if(!seedCachedLanguage(saved))document.documentElement.classList.add('i18n-pending');
+state.started=true;
+observe();
+window.__ibI18nReady=window.i18nBoot(saved);
+}else{
+state.started=true;
+observe();
+patchPopup();
+applyLanguageDirection('en');
+clearPending();
+window.__ibI18nReady=Promise.resolve('en');
+}
+}
+window.i18nEnsureCached=function(lang){
+if(!cacheEnabled()||!lang||lang==='en')return Promise.resolve();
+var local=readLocalCache(lang);
+if(local&&!local.stale)return Promise.resolve();
+if(local&&local.stale)return refresh(lang);
+if(window.i18nDict[lang]){
+writeLocalCache(lang,window.i18nDict[lang]);
+return refresh(lang);
+}
+return load(lang);
+};
+window.i18nClearCache=function(){
+try{Object.keys(localStorage).filter(function(k){return k.indexOf(CACHE_PREFIX)===0;}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}
+};
+boot();
 })();
