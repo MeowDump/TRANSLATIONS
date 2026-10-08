@@ -67,11 +67,16 @@
     "role": "Translator",
     "languages": [
       "de",
-      "ro"
+      "ro",
+      "it",
+      "pt-BR",
+      "nl",
+      "hu"
     ],
     "link": "",
     "avatar": ""
-    {
+  },
+  {
     "name": "crackeren",
     "role": "Translator",
     "languages": [
