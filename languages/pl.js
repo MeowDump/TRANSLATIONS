@@ -397,9 +397,9 @@ window.i18nDict.pl = {
   "Control Centre": "Centrum Sterowania",
   "Auto Run": "Automatyczne Uruchomienie",
   "Safe Mode is enabled to prevent custom-ROM-specific features from being used on stock ROM, where they may cause compatibility issues or unexpected behavior. If you’re using a custom ROM or understand the risks of enabling these features on stock firmware, you can disable Safe Mode from Advanced Mode.": "Tryb Bezpieczny jest włączony aby zapobiec używania funkcji przeznaczonych dla custom ROMów do bycia użytych na stock ROMie, mogą one powodować problemy z kompatybilnością lub mogą wywoływać niezaplanowane zachowanie. Jeżeli używasz custom ROMa lub rozumiesz ryzyko użycia tych funkcji na stołowym ROMie, możesz wyłączyć Tryb Bezpieczny w Trybie Zaawansowanym",
-  "Enabling this forces every prop to be set to its correct value, whether it already exists or not. Disabling it only modifies props that already exist on your device and skips non-existing props by default.": "###",
+  "Enabling this forces every prop to be set to its correct value, whether it already exists or not. Disabling it only modifies props that already exist on your device and skips non-existing props by default.": "Włączenie tego wymusza wszystkie właściwości aby były prawidłowe nawet jeżeli istnieją lub nie. Wyłączenie tego modyfikuje tylko właściwości które już istnieją na twoim urządzeniu i pomija domyślnie nie istniejące właściwości.",
   "What do these do?": "Co one robią?",
-  "These settings requires reboot": "###",
+  "These settings requires reboot": "Te ustawienia wymagają ponownego uruchomienia urządzenia",
   "This will be done via action button": "To zostanie zastosowane po kliknięciu akcji modułu",
   "General": "Ogólne",
   "Kernel (Not recommended to enable)": "Kernel (Włączenie nie jest rekomendowane)",
@@ -411,9 +411,9 @@ window.i18nDict.pl = {
   "Nuke Lineage": "Usuń Lineage",
   "Hide Custom ROM": "Ukryj Custom ROM",
   "Spoof Lineage Props": "Spoofuj Właściwości LineageOS",
-  "Debug Fingerprint": "###",
-  "Debug Build": "###",
-  "Build Tag": "###",
+  "Debug Fingerprint": "Odcisk Palca Debugowania",
+  "Debug Build": "Build Typu Debug",
+  "Build Tag": "Tag Builda",
   "Spoof Encryption": "Spoofuj Szyfrowanie Pamięci",
   "Spoof SELinux": "Spoofuj Status SELinux",
   "Hide PIF Detection": "Ukryj Wykrywanie PIF",
@@ -423,9 +423,9 @@ window.i18nDict.pl = {
 
   /* Reboot Flag Labels */
   "custom ROM": "Custom ROM",
-  "reboot": "###",
+  "reboot": "uruchom ponownie",
   "bootloop risk": "ryzyko bootloopa",
-  "not recommended": "###",
+  "not recommended": "nie rekomendowane",
   "root traces": "ślady roota",
 
   /* Reboot Flag Descriptions */
@@ -438,7 +438,7 @@ window.i18nDict.pl = {
   "Spoofs build tags to release-keys instead of test-keys.": "Spoofuje tagi builda na klucze typu release zamiast typu testowego.",
   "Fakes device encryption status to appear as encrypted": "Podmienia status szyfrowania danych urządzenia tak aby było wykrywane jako szyfrowane",
   "Spoofs SELinux status to report as enforcing. WARNING: May cause bootloops on some devices. Use with caution.": "Spoofuje status SELinux aby raportował że jego statusem jest WYMUSZONY(ENFORCING). UWAGA: Może powodować bootloop na niektórych urządzeniach. Używać z ostrożnością.",
-  "Hides PIF-related hooks and detection traces on boot, it may automatically enable inbuilt ROM spoofing.": "###",
+  "Hides PIF-related hooks and detection traces on boot, it may automatically enable inbuilt ROM spoofing.": "Ukrywa hooki i ślady PIF. To może automatycznie włączyć wbudowany w ROMa spoofing",
   "Cleans suspicious files and directories that may reveal root access or module presence on boot.": "Czyści podejrzane pliki i foldery, które mogą wskazywać dostęp do roota lub obecności modułów podczas uruchamiania urządzenia.",
   "Hides custom recovery presence by spoofing recovery path.": "Ukrywa obecność niestandardowego recovery spoofując ścieżkę recovery.",
   "Prevents spoofing of the security patch date. Use if banking apps detect patch mismatch. Disabling this can cause play integrity failure on old ROMs/Android versions": "Zapobiega spoofowaniu daty security patcha. Użyj tego jeśli aplikacje bankowe wykrywają spoofowanie daty patcha zabezpieczeń. Wyłączenie tego może powodować brak integralności play na starych Custom ROMach / Wersjach Androida",
@@ -448,7 +448,7 @@ window.i18nDict.pl = {
   "Clear Gapps Logs": "Wyczyść Logi GAPPSów",
   "Clear Module Logs": "Wyczyść Logi Modułu",
   "OTA Fix": "Naprawa OTA",
-  "action": "###",
+  "action": "akcja",
 
   /* Action Flag Descriptions */
   "Removes LSposed framework traces from the system.": "Usuwa ślady frameworku LSposed z systemu.",
@@ -535,7 +535,7 @@ window.i18nDict.pl = {
   "Action execution enabled": "Wykonanie akcji włączone",
   "Action execution disabled": "Wykonywanie akcji wyłączone",
   "Executing action...": "Wykonywanie akcji...",
-  "Safe mode is active. Disable safe mode in advanced settings to use this feature.": "###",
+  "Safe mode is active. Disable safe mode in advanced settings to use this feature.": "Tryb bezpieczny jest aktywny. Wyłącz tryb bezpieczny w ustawieniach zaawansowanych aby użyć tej funkcji.",
   "States refreshed": "Statusy odświeżone",
   "Safe mode disabled incompatible flags": "Tryb bezpieczny wyłączył niekompatybilne flagi",
   "Error:": "Błąd:",
@@ -1283,7 +1283,7 @@ window.i18nDict.pl = {
   "Write failed": "Zapis nie powiódł się",
   "Unblacklisted & restored to spoofed": "Usunięty z blacklisty i przywrócony do listy spoofowania",
   "Blacklisted": "Dodano do blacklisty",
-  "Blacklist updated, spoofed sync failed": "###",
+  "Blacklist updated, spoofed sync failed": "Blacklista zaktualizowana, synchronizacja listy spoofowania nie powiodła się",
 
   /* Bulk Actions */
   "All available apps already spoofed": "Wszystkie dostępne aplikacje są już na liście spoofowania",
