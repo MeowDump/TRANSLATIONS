@@ -10,7 +10,7 @@ window.i18nDict.pl = {
   "Checking": "Sprawdzanie",
   "Dashboard": "Interfejs",
   "Announcements": "Ogłoszenia",
-  "Interface": "Interfejs",
+  "Interface": "Dostosuj Interfejs",
   "Support": "Wsparcie",
   "Logs": "Logi",
 
