@@ -137,7 +137,7 @@ window.i18nDict.pl = {
   "Ask Assistant": "Zapytaj Asystenta",
   "Get help and guidance": "Zdobądź pomoc i wsparcie",
   "WebUI Translation Team": "Zespół Tłumaczenia WebUI",
-  "Thanks to these people": "Dzięki tym osobom",
+  "Thanks to these people": "Wielkie podziękowania dla tych osób",
   "Resources": "Zasoby",
   "Integrity Downloader": "Pobieracz Integralności",
   "Useful tools and files": "Przydatne narzędzia i pliki",
