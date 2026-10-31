@@ -352,7 +352,7 @@ window.i18nDict.pl = {
   "Got it": "Zrozumiałem",
 
   /* Status */
-  "Pending": Oczekuję"",
+  "Pending": "Oczekuje",
   "Queued": "Zakolejkowno",
   "Downloading...": "Pobieranie...",
   "Complete": "Wykonane",
