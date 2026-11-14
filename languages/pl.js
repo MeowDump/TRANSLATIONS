@@ -5,7 +5,7 @@ window.i18nDict.pl = {
   "Open System Overview": "Otwórz Przegląd Systemu",
   "System Overview": "Przegląd Systemu",
   "Expand integrity status": "Pokaż status integralności",
-  "Minimize integrity status": "Ukryj status integrlności",
+  "Minimize integrity status": "Ukryj status integralności",
   "KEYBOX INTEGRITY STATUS": "STATUS INTEGRALNOŚCI KEYBOXA",
   "Checking": "Sprawdzanie",
   "Dashboard": "Interfejs",
@@ -33,7 +33,7 @@ window.i18nDict.pl = {
   "Customize pixel prop injection": "Dostosuj wstrzykiwanie właściwości pixela",
 
   /* Announcements */
-  "UPDATES": "AKTUALIZECJE",
+  "UPDATES": "AKTUALIZACJE",
   "Latest changes and news from Integrity Box.": "Ostatnie zmiany oraz wiadomości od Integrity Box.",
   "Refresh": "Odśwież",
   "Loading announcements...": "Ładowanie ogłoszeń...",
@@ -53,7 +53,7 @@ window.i18nDict.pl = {
   "Full screen mode": "Tryb Pełnoekranowy",
   "Use the entire display for Integrity Box": "Używaj całego ekranu dla Integrity Box",
   "Gradient background": "Gradient Tła",
-  "Use a slow moving gradient background": "Użyj wolno przemeszczającego się gradientu jako tło",
+  "Use a slow moving gradient background": "Użyj wolno przemieszczającego się gradientu jako tło",
   "Skip intro": "Pomiń intro",
   "Open Integrity Box directly without the intro screen": "Otwiera UI Integrity Box bez wyświetlenia intra",
   "Cache UI assets": "Cachuj zasoby UI",
@@ -69,7 +69,7 @@ window.i18nDict.pl = {
   "Edge gesture side": "Boczny gest krawędzi",
   "Left edge": "Lewa krawędź",
   "Right edge": "Prawa krawędź",
-  "When Floating back button is enabled, edge back gestures are disabled automatically for opened iframe tools.": "Gdy Płwyający guzik cofania jest włączony, gesty cofnięcia krawędzi automatycznie są wyłączane dla otworzonych narzędzi iframe.",
+  "When Floating back button is enabled, edge back gestures are disabled automatically for opened iframe tools.": "Gdy pływający guzik cofania jest włączony, gesty cofnięcia krawędzi automatycznie są wyłączane dla otworzonych narzędzi iframe.",
 
   /* Logs */
   "LOG FILES": "PLIKI LOGÓW",
@@ -87,7 +87,7 @@ window.i18nDict.pl = {
   "Copied": "Skopiowano",
   "Log copied to clipboard": "Log skopiowany do schowka",
   "Unable to copy log": "Wystąpił błąd podczas kopiowania logu",
-  "No readable log files found.": "Nieznaleziono logów możliwych do odczytania.",
+  "No readable log files found.": "Nie znaleziono logów możliwych do odczytania.",
   "Complete file": "Cały plik",
   "line": "linia",
   "lines": "linie",
@@ -297,7 +297,7 @@ window.i18nDict.pl = {
   "Tools & Utility": "Narzędzia pomocnicze",
   "Sync with Canary": "Synchronizuj z Canary",
   "Customize ZN": "Dostosuj ZN",
-  "Extract boot.img": "Wyodrębnj boot.img",
+  "Extract boot.img": "Wyodrębnij boot.img",
   "Inject HMA-OOS config": "Wstrzyknij konfigurację HMA-OSS",
 
   /* Help */
@@ -305,8 +305,8 @@ window.i18nDict.pl = {
 
   /* Help - Core Settings */
   "Enable this if you are on a Pixel stock ROM or a ROM with built-in Play Integrity spoofing. It disables Zygisk-based injection to avoid conflicts.": "Włącz to jeżeli jesteś na orginalnym oprogramowaniu Google Pixel lub ROMie z wbudowanym spoofowaniem Play Integrity. Wyłącza wstrzyknięcie bazowane na Zygisk aby nie doprowadzić do konfliktu.",
-  "Enables verbose logging inside the module. Only use for debugging. Many banking and streaming apps detect verbose logs and may refuse to launch. You should not enabled this toggle unless you're reporting a bug.": "Włącza logi verbose w module. Wykorzystywać tylko w podczas debugowania. Wiele aplikacji bankowych i streamingowych wykrywa logi verbose i może przestać działać. Nie powinieneś tego włączać chyba że zgłaszasz błąd.",
-  "This prevents custom-ROM-specific features from being used on stock firmware, where they may cause compatibility issues or unexpected behavior. YOU SHOULD NOT disable this if you're using STOCK ROM": "To zapobiega funkcji przewidzianych dla Custom ROMów od używania ich na orginalnym oprogramowaniu, te funkcje mogą powodować problemy z kompatybilnością lub nie przewidywanym zachowaniem urządzenia. NIE POWINNIENEŚ tego wyłączać jeżeli używaś orginalnego oprogramowania urządzenia",
+  "Enables verbose logging inside the module. Only use for debugging. Many banking and streaming apps detect verbose logs and may refuse to launch. You should not enabled this toggle unless you're reporting a bug.": "Włącza logi verbose w module. Wykorzystywać tylko podczas debugowania. Wiele aplikacji bankowych i streamingowych wykrywa logi verbose i może przestać działać. Nie powinieneś tego włączać chyba że zgłaszasz błąd.",
+  "This prevents custom-ROM-specific features from being used on stock firmware, where they may cause compatibility issues or unexpected behavior. YOU SHOULD NOT disable this if you're using STOCK ROM": "To zapobiega funkcji przewidzianych dla Custom ROMów od używania ich na orginalnym oprogramowaniu, te funkcje mogą powodować problemy z kompatybilnością lub nieprzewidywanym zachowaniem urządzenia. NIE POWINNIENEŚ tego wyłączać jeżeli używasz orginalnego oprogramowania urządzenia",
 
   /* Help - Tools & Utility */
   "Enables seamless, independently updates for language packs and hotfix patches without requiring a module upgrade or device reboot.": "Włącz niezależne aktualizacje dla pakietów językowych i hotfixów bez konieczności aktualizacji modułu lub ponownego uruchomienia urządzenia",
@@ -327,7 +327,7 @@ window.i18nDict.pl = {
   "Agressive Mode disabled": "Tryb Agresywny Wyłączono",
   "Zygisk Next configured": "Zygisk Next Skonfigurowany",
   "Zygisk Next reset to defaults": "Zygisk Next zresetowany do ustawień domyślnych",
-  "Script not found": "Skrypty nie znalezione",
+  "Script not found": "Nie znaleziono skryptu",
   "Script failed": "Wykonywanie skryptu nie powiodło się",
   "Canary updated": "Wersja Canary została zaktualizowana",
   "No update available at the moment": "Brak dostępnych aktualizacji",
@@ -511,7 +511,7 @@ window.i18nDict.pl = {
   "OMK Pixel disabled": "Pixel OMK Wyłączony",
   "OMK Pixel enabled": "Pixel OMK Włączony",
   "TEEsim modifications will be ignored": "Modyfikacje TEEsim będą ignorowane",
-  "TEEsim will be updated by default": "TEEsim będzie aktualuzowany domyślnie",
+  "TEEsim will be updated by default": "TEEsim będzie aktualizowany domyślnie",
   "Please reboot your device": "Proszę uruchom swoje urządzenie ponownie",
   "Encryption spoofed": "Szyfrowanie Pamięci Spoofowane",
   "Encryption disabled": "Szyfrowanie Pamięci Wyłączone",
@@ -668,7 +668,7 @@ window.i18nDict.pl = {
   "Source Selection": "Wybieranie Źródła",
   "Each download session allows you to choose only one keybox source. Using multiple sources at the same time isn’t supported because the files could conflict with one another": "Każda sesja pobierania pozwala ci wybrać tylko jedno źródło pobierania keyboxa. Używanie wielu źródeł nie jest wspierane ponieważ pliki mogą powodować konflikt ze sobą",
   "Skip Integrity Box toggle": "Pomiń przełącznik Integrity Box",
-  "When you click the ACTION button, the default IntegrityBox keybox source will be disabled, and the unofficial source you selected will be used instead": "Gdy użyjesz guzika AKCJI, domyślne źródło keyboxa IntegrityBox będzie wyłączone ,a nie oficjalne źródło będzie zastąpu domyślne",
+  "When you click the ACTION button, the default IntegrityBox keybox source will be disabled, and the unofficial source you selected will be used instead": "Gdy użyjesz guzika AKCJI, domyślne źródło keyboxa IntegrityBox będzie wyłączone ,a nie oficjalne źródło będzie zastąpywane domyślne",
   "Download Button": "Guzik Pobierania",
   "You can download the keybox from any of the unofficial sources mentioned above by clicking the Download button. The downloaded keybox will automatically replace the existing keybox at its current path, so no manual changes or configuration are required": "Możesz pobrać keybox z każdego z nieoficjalnych źródeł omówionych powyżej przez kliknięcie guzika Pobierania. Pobrany keybox automatycznie zastąpi istniejący keybox w jego obecnej ścierzce więc wiele manualnych zmian czy konfiguracji nie będzie wymagane",
   
@@ -704,7 +704,7 @@ window.i18nDict.pl = {
   "Switching mode...": "Zmienianie Trybu...",
 
   /* Heartbeat Status */
-  "Not running": "Nie działą",
+  "Not running": "Nie działa",
   "Healthy": "Zdrowy",
   "Slow response": "Wolne odpowiedzi",
   "Not responding": "Nie odpowiada",
@@ -747,7 +747,7 @@ window.i18nDict.pl = {
   /* Master Control */
   "Master Control": "Główne Sterowanie",
   "Spoof Apps": "Ukrywaj Aplikację",
-  "About Spoof Apps": "O Spoofowaniu Aplkacji",
+  "About Spoof Apps": "O Spoofowaniu Aplikacji",
   "Enable per-app pixel spoofing for selected apps. Apps in your list will receive spoofed build properties (model, fingerprint, device info) when they request them.": "Włącz spoofowanie dla danych aplikacji. Aplikacje na liście będą otrzymywać spoofowane właściwości builda (model, odcisk palca, informacje o urządzieniu) gdy poproszą o nie.",
   "How to use:": "Jak używać:",
   "1. Enable the master toggle": "1. Włącz główny przełącznik",
@@ -769,7 +769,7 @@ window.i18nDict.pl = {
 
   /* Locked State */
   "Feature Unavailable": "Funkcja niedostępna",
-  "Zygisk is required for per-app spoofing. Enable Zygisk in your root manager, ensure IntegrityBox is flashed, then reboot.": "Zygisk jest wymagany do spoofowania dla konkretnych aplikacji. Włącz Zygisk w swojim root menadżerze, upewnij że IntegrityBox jest wgrany i uruchom urządzenie ponownie",
+  "Zygisk is required for per-app spoofing. Enable Zygisk in your root manager, ensure IntegrityBox is flashed, then reboot.": "Zygisk jest wymagany do spoofowania dla konkretnych aplikacji. Włącz Zygisk w swoim root menadżerze, upewnij że IntegrityBox jest wgrany i uruchom urządzenie ponownie",
 
   /* Modal */
   "Backups": "Kopie Zapasowe",
@@ -780,7 +780,7 @@ window.i18nDict.pl = {
   /* App Actions */
   "Removed from targets": "Usunięto z listy celów",
   "Added to targets": "Dodano do listy celów",
-  "Write failed": "Zapis niepowódł się",
+  "Write failed": "Zapis nie powiódł się",
   "Added all visible apps": "Dodano wszystkie widoczne aplikacje",
   "Removed all visible apps": "Usunięto wszystkie widoczne aplikacje",
 
@@ -817,7 +817,7 @@ window.i18nDict.pl = {
   "Skip Key": "Pomiń Klucz",
 
   /* Behaviour Descriptions */
-  "Enabling this will preserve spoofing settings otherwise they'll be reset automatically when you run action. Please do not disable this toggle.": "Włączenie tego zachowa ustawienia spoofowania w innym wypadku będą automatycznie zrestowane gdy uruchomisz akcję. Proszę nie wyłączać tego przełącznika",
+  "Enabling this will preserve spoofing settings otherwise they'll be reset automatically when you run action. Please do not disable this toggle.": "Włączenie tego zachowa ustawienia spoofowania w innym wypadku będą automatycznie zresetowane gdy uruchomisz akcję. Proszę nie wyłączać tego przełącznika",
   "Applies aggressive integrity checks and stronger property spoofing to bypass advanced detection methods.": "Stosuje ustawienia które agresywnie spoofują testy integralności oraz mocniej spoofują właściwości aby ominąć wykrycie przez bardziej zaawansowane metody wykrywania.",
   "Enables detailed logging of all PIF operations for debugging and troubleshooting purposes. Only enable if you know what you're doing.": "Włącza dokładniejsze logowanie wszystkich operacji związanych z PIF dla lepszego  debugowania i rozwiązywania problemów. Włącz to tylko jeśli wiesz co robisz.",
   "Generates a valid meow.json file in your device's internal storage (/sdcard) whenever you trigger the Integrity Box action. The generated file can then be manually imported into your custom ROM's spoofing settings. Recommended for users running Integrity Box in ZYGISKLESS Mode. (ROM's inbuilt spoofing).": "Generuje nowy poprawny meow.json w pamięci wewnętrznej twojego urządzenia (/sdcard) w momencie gdy uruchomisz akcję Integrity Boxa. Wygenerowany plik może być później zaimportowany do ustawień spoofowania custom roma. Rekomendowane dla użytkowników uruchamiających Integrity Box w trybie Zygisk-less. (Używających wbudowanego spoofowania ROMa)",
@@ -1082,7 +1082,7 @@ window.i18nDict.pl = {
   "ROM keyword found:": "Brak właściwości roma znalezionych",
   "No additional ROM keyword props found": "Brak dodatkowych właściwości ROMa znalezionych",
   "additional ROM keyword prop(s) found": "dodatkowe właściwości ROMa znalezione",
-  "ROM keyword scan failed:": "Skan w poszukiwaniu właściwości ROMa niepowódł się:",
+  "ROM keyword scan failed:": "Skan w poszukiwaniu właściwości ROMa nie powiódł się:",
 
   /* Tips */
   "Hook/PIF props detected - enable Hook Props to clean them": "Właściwości Hookowania / PIF znalezione - włącz Właściwości Hookowania aby je wyczyścić",
@@ -1176,7 +1176,7 @@ window.i18nDict.pl = {
   "Opening...": "Otwieranie...",
   "Failed to open link": "Nie udało się otworzyć linku",
   "Exported to /sdcard/report.json": "Wyeksportowano do /sdcard/report.json",
-  "Failed to export": "Nieudało się wyekspotować",
+  "Failed to export": "Nie udało się wyeksportować",
 
   /* Footer */
   "IntegrityBox • 2026": "IntegrityBox • 2026",
@@ -1223,7 +1223,7 @@ window.i18nDict.pl = {
   /* Toasts */
   "Too many options selected. All settings cleared.": "Zbyt wiele opcji wybranych. Wszystkie ustawienia zostały wyczyszczone.",
   "Please wait before switching again": "Proszę zaczekać zanim zmienisz ponownie",
-  "Cannot select the opposite option. Deselect it first.": "Niemożna zaznaczyć przeciwnej opcji. Proszę odznacz ją.",
+  "Cannot select the opposite option. Deselect it first.": "Nie można zaznaczyć przeciwnej opcji. Proszę odznacz ją.",
   "Maximum 2 options allowed. Deselect one first.": "Maksymalnie 2 opcje dozwolone. Odznacz najpierw jedną.",
   "Reboot to apply changes": "Uruchom Ponownie aby zastosować zmiany",
   "Failed to apply changes": "Zastosowywanie zmian niepowiodło się",
